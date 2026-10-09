@@ -1,1 +1,1 @@
-{"version":1,"postgres":false,"redis":false,"install":"npm ci","build":"npm run build","migrate":null,"seed":null,"services":[{"name":"web","command":"npm start","port":4173,"healthPath":"/health","stripPrefix":false}],"jobs":[]}
+{"version":1,"postgres":true,"redis":false,"install":"npm ci","build":"npm run build","migrate":"npm run migrate","seed":null,"services":[{"name":"web","command":"PORT=4173 npm start","port":4173,"healthPath":"/health","stripPrefix":false}],"jobs":[]}

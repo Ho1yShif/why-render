@@ -2,20 +2,23 @@
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ho1yShif/why-render)
 
-An unofficial, single-page explainer that makes the case for OpenAI forward-deployed engineers using Render to ship customer apps and agents. It covers private networking, end-to-end observability and example app architectures.
+An unofficial explainer for OpenAI forward-deployed engineers shipping customer apps and agents on Render. The page loads no remote assets or trackers.
 
-Built with Vite, vanilla TypeScript and hand-written CSS. It loads no remote assets and no trackers.
+## Architecture
+
+A Node web service (Starter) renders page copy from Render Postgres (Basic 256 MB) on each request. Both paid resources run in Oregon in one project environment and connect over Render's private network. `GET /api/content` exposes the blocks as JSON. The pre-deploy command applies forward-only SQL migrations and inserts missing default blocks without overwriting existing content.
+
+## Local development
+
+Set `DATABASE_URL` to a local PostgreSQL connection URL, then:
 
 ```bash
 npm ci
-npm run dev       # local dev server
-npm run build     # type-check + build to dist/
-npm run preview   # serve dist/
-
-# production-style serve (binds $PORT, default 4173)
-npm run build && npm start
+npm run build
+npm run migrate
+npm run dev
 ```
 
-`public/health` is served at `/health` (returns `ok`) for preview health checks.
+`npm run dev` runs Vite in build-watch mode alongside the TypeScript server in watch mode. Open http://localhost:4173. Run `npm run migrate` again after adding a migration. `npm run typecheck` and `npm run build` check the application; `npm start` serves a built application. `GET /health` returns `ok` without querying Postgres.
 
-Deploy: click the button above, or create a Blueprint from this repo. `render.yaml` defines a Render static site (`dist/`) inside the `fde-render-explainer` project's `production` environment.
+Deploy using the button above. Its Blueprint provisions paid plans. After the new `why-render-web` service is live, the old static site `fde-render-explainer` can be deleted from the Dashboard; Blueprint sync does not delete it.

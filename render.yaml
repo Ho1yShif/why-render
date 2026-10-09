@@ -4,14 +4,24 @@ projects:
       - name: production
         services:
           - type: web
-            runtime: static
-            name: fde-render-explainer
+            name: why-render-web
+            runtime: node
+            plan: starter
+            region: oregon
             buildCommand: npm ci && npm run build
-            staticPublishPath: dist
-            headers:
-              - path: /assets/*
-                name: Cache-Control
-                value: public, max-age=31536000, immutable
-              - path: /*
-                name: X-Frame-Options
-                value: DENY
+            startCommand: npm start
+            preDeployCommand: npm run migrate
+            healthCheckPath: /health
+            envVars:
+              - key: DATABASE_URL
+                fromDatabase:
+                  name: why-render-db
+                  property: connectionString
+              - key: NODE_VERSION
+                value: 24.14.1
+        databases:
+          - name: why-render-db
+            databaseName: why_render
+            user: why_render
+            plan: basic-256mb
+            region: oregon
