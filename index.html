@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta name="color-scheme" content="dark" >
-    <meta name="theme-color" content="#0a0a0a" >
-    <title>Render for OpenAI FDEs — ship customer apps and agents on one stack</title>
-    <meta       name="description"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>Render for FDEs</title>
+    <meta
+      name="description"
       content="An unofficial explainer on why OpenAI forward-deployed engineers benefit from shipping customer apps and agents on Render: private networking, end-to-end observability, and one stack from database to frontend."
-    >
-    <link rel="icon" type="image/png" href="/favicon.png" >
-    <link rel="apple-touch-icon" href="/render-logomark.png" >
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/render-logomark.png" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -18,8 +19,16 @@
     <header class="site-header">
       <nav class="nav container" aria-label="Primary">
         <a class="brand" href="#top" aria-label="Render for FDEs, back to top">
-          <img class="brand-mark" src="/render-logomark.png" alt="" width="24" height="24" >
-          <span class="brand-word">Render <span class="brand-for">for FDEs</span></span>
+          <img
+            class="brand-mark"
+            src="/render-logomark.png"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <span class="brand-word"
+            >Render <span class="brand-for">for FDEs</span></span
+          >
         </a>
         <ul class="nav-links">
           <li><a href="#why">Why</a></li>
@@ -37,62 +46,204 @@
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-inner">
           <div class="hero-copy">
-          <p class="label" data-content="hero.label.1">For OpenAI forward-deployed engineers</p>
-          <h1 id="hero-title" data-content="hero.title">
-            Ship customer apps and agents on one stack.
-          </h1>
-          <p class="lede" data-content="hero.lede">
-            You're dropping into customer environments and shipping in days, not quarters. The database, the API, the
-            agents and the frontend should live together: one region, one private network, one place to read the logs.
-            That's Render.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://render.com" rel="noopener">
-              Explore Render
-              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ></path></svg>
-            </a>
-            <a class="btn btn-secondary" href="#why">Why it matters</a>
-          </div>
+            <p class="label" data-content="hero.label.1">
+              For OpenAI forward-deployed engineers
+            </p>
+            <h1 id="hero-title" data-content="hero.title">
+              Ship customer apps and agents on one stack.
+            </h1>
+            <p class="lede" data-content="hero.lede">
+              You're dropping into customer environments and shipping in days,
+              not quarters. The database, the API, the agents and the frontend
+              should live together: one region, one private network, one place
+              to read the logs. That's Render.
+            </p>
+            <div class="cta-row">
+              <a
+                class="btn btn-primary"
+                href="https://render.com"
+                rel="noopener"
+              >
+                Explore Render
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path
+                    d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </a>
+              <a class="btn btn-secondary" href="#why">Why it matters</a>
+            </div>
           </div>
           <div class="hero-trace" aria-hidden="true">
             <svg viewBox="0 0 460 480" focusable="false" xml:space="preserve">
               <defs>
-                <filter id="hero-trace-glow" x="-200%" y="-200%" width="500%" height="500%">
-                  <feGaussianBlur stdDeviation="5" ></feGaussianBlur>
+                <filter
+                  id="hero-trace-glow"
+                  x="-200%"
+                  y="-200%"
+                  width="500%"
+                  height="500%"
+                >
+                  <feGaussianBlur stdDeviation="5"></feGaussianBlur>
                 </filter>
               </defs>
-              <rect x="22" y="76" width="416" height="388" class="svg-region hero-trace-region" ></rect>
-              <text x="40" y="101" class="svg-label svg-label--accent hero-trace-label">render · region: oregon</text>
-              <text x="40" y="120" class="svg-sub hero-trace-sub">private network</text>
-              <path class="svg-path-good hero-trace-link" d="M330 43 V163 L160 215 L300 267 L160 319" ></path>
+              <rect
+                x="22"
+                y="76"
+                width="416"
+                height="388"
+                class="svg-region hero-trace-region"
+              ></rect>
+              <text
+                x="40"
+                y="101"
+                class="svg-label svg-label--accent hero-trace-label"
+              >
+                render · region: oregon
+              </text>
+              <text x="40" y="120" class="svg-sub hero-trace-sub">
+                private network
+              </text>
+              <path
+                class="svg-path-good hero-trace-link"
+                d="M330 43 V163 L160 215 L300 267 L160 319"
+              ></path>
               <g class="hero-trace-node hero-trace-node--user">
-                <rect x="283" y="24" width="94" height="38" class="svg-node" ></rect>
-                <text x="330" y="48" class="svg-node-text" text-anchor="middle">user</text>
+                <rect
+                  x="283"
+                  y="24"
+                  width="94"
+                  height="38"
+                  class="svg-node"
+                ></rect>
+                <text x="330" y="48" class="svg-node-text" text-anchor="middle">
+                  user
+                </text>
               </g>
               <g class="hero-trace-node hero-trace-node--web">
-                <rect x="283" y="144" width="94" height="38" class="svg-node svg-node--accent" ></rect>
-                <text x="330" y="168" class="svg-node-text" text-anchor="middle">web</text>
+                <rect
+                  x="283"
+                  y="144"
+                  width="94"
+                  height="38"
+                  class="svg-node svg-node--accent"
+                ></rect>
+                <text
+                  x="330"
+                  y="168"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  web
+                </text>
               </g>
               <g class="hero-trace-node hero-trace-node--api">
-                <rect x="113" y="196" width="94" height="38" class="svg-node" ></rect>
-                <text x="160" y="220" class="svg-node-text" text-anchor="middle">api</text>
+                <rect
+                  x="113"
+                  y="196"
+                  width="94"
+                  height="38"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="160"
+                  y="220"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  api
+                </text>
               </g>
               <g class="hero-trace-node hero-trace-node--agent">
-                <rect x="253" y="248" width="94" height="38" class="svg-node" ></rect>
-                <text x="300" y="272" class="svg-node-text" text-anchor="middle">agent</text>
+                <rect
+                  x="253"
+                  y="248"
+                  width="94"
+                  height="38"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="300"
+                  y="272"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  agent
+                </text>
               </g>
               <g class="hero-trace-node hero-trace-node--pg">
-                <rect x="113" y="300" width="94" height="38" class="svg-node" ></rect>
-                <text x="160" y="324" class="svg-node-text" text-anchor="middle">postgres</text>
+                <rect
+                  x="113"
+                  y="300"
+                  width="94"
+                  height="38"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="160"
+                  y="324"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  postgres
+                </text>
               </g>
-              <circle cx="330" cy="43" r="10" class="hero-trace-packet-glow" filter="url(#hero-trace-glow)" ></circle>
-              <circle cx="330" cy="43" r="4.5" class="hero-trace-packet" ></circle>
-              <rect x="40" y="370" width="380" height="76" class="hero-trace-log" ></rect>
-              <text x="54" y="385" class="svg-sub hero-trace-log-title">live logs</text>
-              <text x="54" y="400" class="hero-trace-log-line hero-trace-log-line--1">web    GET /chat      200   3ms</text>
-              <text x="54" y="414" class="hero-trace-log-line hero-trace-log-line--2">api    POST /run      200  12ms</text>
-              <text x="54" y="428" class="hero-trace-log-line hero-trace-log-line--3">agent  run ok             840ms</text>
-              <text x="54" y="442" class="hero-trace-log-line hero-trace-log-line--4">pg     SELECT 1 row         2ms</text>
+              <circle
+                cx="330"
+                cy="43"
+                r="10"
+                class="hero-trace-packet-glow"
+                filter="url(#hero-trace-glow)"
+              ></circle>
+              <circle
+                cx="330"
+                cy="43"
+                r="4.5"
+                class="hero-trace-packet"
+              ></circle>
+              <rect
+                x="40"
+                y="370"
+                width="380"
+                height="76"
+                class="hero-trace-log"
+              ></rect>
+              <text x="54" y="385" class="svg-sub hero-trace-log-title">
+                live logs
+              </text>
+              <text
+                x="54"
+                y="400"
+                class="hero-trace-log-line hero-trace-log-line--1"
+              >
+                web GET /chat 200 3ms
+              </text>
+              <text
+                x="54"
+                y="414"
+                class="hero-trace-log-line hero-trace-log-line--2"
+              >
+                api POST /run 200 12ms
+              </text>
+              <text
+                x="54"
+                y="428"
+                class="hero-trace-log-line hero-trace-log-line--3"
+              >
+                agent run ok 840ms
+              </text>
+              <text
+                x="54"
+                y="442"
+                class="hero-trace-log-line hero-trace-log-line--4"
+              >
+                pg SELECT 1 row 2ms
+              </text>
             </svg>
           </div>
         </div>
@@ -102,31 +253,72 @@
       <section class="section" id="why" aria-labelledby="why-title">
         <div class="container">
           <header class="section-head reveal">
-            <p class="label" data-content="why.label.1"><span class="num">01</span> The problem with stitching providers</p>
-            <h2 id="why-title" data-content="why.h2.1">Four vendors per prototype is three too many.</h2>
+            <p class="label" data-content="why.label.1">
+              <span class="num">01</span> The problem with stitching providers
+            </p>
+            <h2 id="why-title" data-content="why.h2.1">
+              Four vendors per prototype is three too many.
+            </h2>
             <p class="section-lede" data-content="why.p.1">
-              A typical "edge-first" build puts the frontend and functions on Vercel or Cloudflare, then bolts on a
-              database vendor, a queue vendor and a logging vendor. Each one is good at its slice. Together they add
-              network hops, dashboards, credentials and blind spots that you have to manage at every customer.
+              A typical "edge-first" build puts the frontend and functions on
+              Vercel or Cloudflare, then bolts on a database vendor, a queue
+              vendor and a logging vendor. Each one is good at its slice.
+              Together they add network hops, dashboards, credentials and blind
+              spots that you have to manage at every customer.
             </p>
           </header>
 
           <div class="compare">
-            <article class="compare-card compare-card--bad reveal" aria-labelledby="compare-stitched">
-              <h3 id="compare-stitched" data-content="why.h3.1"><span class="tag">Stitched</span> Edge platform + vendors</h3>
+            <article
+              class="compare-card compare-card--bad reveal"
+              aria-labelledby="compare-stitched"
+            >
+              <h3 id="compare-stitched" data-content="why.h3.1">
+                <span class="tag">Stitched</span> Edge platform + vendors
+              </h3>
               <ul class="vendor-list">
-                <li data-content="why.li.1"><div><strong>Frontend + functions</strong><span>Vercel / Cloudflare</span></div></li>
-                <li data-content="why.li.2"><div><strong>Database</strong><span>Separate database vendor</span></div></li>
-                <li data-content="why.li.3"><div><strong>Queue / background jobs</strong><span>Separate queue vendor</span></div></li>
-                <li data-content="why.li.4"><div><strong>Logs &amp; traces</strong><span>Separate logging vendor</span></div></li>
+                <li data-content="why.li.1">
+                  <div>
+                    <strong>Frontend + functions</strong
+                    ><span>Vercel / Cloudflare</span>
+                  </div>
+                </li>
+                <li data-content="why.li.2">
+                  <div>
+                    <strong>Database</strong
+                    ><span>Separate database vendor</span>
+                  </div>
+                </li>
+                <li data-content="why.li.3">
+                  <div>
+                    <strong>Queue / background jobs</strong
+                    ><span>Separate queue vendor</span>
+                  </div>
+                </li>
+                <li data-content="why.li.4">
+                  <div>
+                    <strong>Logs &amp; traces</strong
+                    ><span>Separate logging vendor</span>
+                  </div>
+                </li>
               </ul>
-              <p class="compare-foot" data-content="why.p.2">4 bills · 4 dashboards · 4 sets of credentials · traffic between them over the public internet</p>
+              <p class="compare-foot" data-content="why.p.2">
+                4 bills · 4 dashboards · 4 sets of credentials · traffic between
+                them over the public internet
+              </p>
             </article>
 
-            <article class="compare-card compare-card--good reveal" aria-labelledby="compare-render">
-              <h3 id="compare-render" data-content="why.h3.2"><span class="tag tag--accent">Render</span> One project</h3>
+            <article
+              class="compare-card compare-card--good reveal"
+              aria-labelledby="compare-render"
+            >
+              <h3 id="compare-render" data-content="why.h3.2">
+                <span class="tag tag--accent">Render</span> One project
+              </h3>
               <div class="project-box">
-                <p class="project-box-label mono" data-content="why.p.3">project: acme-agent · env: production · region: oregon</p>
+                <p class="project-box-label mono" data-content="why.p.3">
+                  project: acme-agent · env: production · region: oregon
+                </p>
                 <ul class="chip-grid">
                   <li class="chip" data-content="why.li.5">Static site</li>
                   <li class="chip" data-content="why.li.6">Web service</li>
@@ -138,142 +330,411 @@
                   <li class="chip" data-content="why.li.12">Key Value</li>
                 </ul>
               </div>
-              <p class="compare-foot" data-content="why.p.4">1 Blueprint · 1 dashboard · 1 private network · logs and metrics for every layer</p>
+              <p class="compare-foot" data-content="why.p.4">
+                1 Blueprint · 1 dashboard · 1 private network · logs and metrics
+                for every layer
+              </p>
             </article>
           </div>
         </div>
       </section>
 
       <!-- 3. PRIVATE NETWORKING -->
-      <section class="section" id="private-networking" aria-labelledby="pn-title">
+      <section
+        class="section"
+        id="private-networking"
+        aria-labelledby="pn-title"
+      >
         <div class="container">
           <header class="section-head reveal">
-            <p class="label" data-content="pn.label.1"><span class="num">02</span> Private networking</p>
-            <h2 id="pn-title" data-content="pn.h2.1">Keep the hot path off the public internet.</h2>
+            <p class="label" data-content="pn.label.1">
+              <span class="num">02</span> Private networking
+            </p>
+            <h2 id="pn-title" data-content="pn.h2.1">
+              Keep the hot path off the public internet.
+            </h2>
           </header>
 
           <div class="two-col">
             <div class="prose reveal">
-              <h3 class="kicker kicker--muted" data-content="pn.h3.1">With a functions platform + external database</h3>
+              <h3 class="kicker kicker--muted" data-content="pn.h3.1">
+                With a functions platform + external database
+              </h3>
               <p data-content="pn.external.body">
-                Your backend function runs on the platform's compute, in whatever region it defaults to unless you
-                pin one, and the database lives with a different provider, in its own network and often its own region.
-                Every query leaves one company's infrastructure, crosses the public internet and enters another's.
-                The database needs a public endpoint to make that work.
+                Your backend function runs on the platform's compute, in
+                whatever region it defaults to unless you pin one, and the
+                database lives with a different provider, in its own network and
+                often its own region. Every query leaves one company's
+                infrastructure, crosses the public internet and enters
+                another's. The database needs a public endpoint to make that
+                work.
               </p>
             </div>
             <div class="prose reveal">
               <h3 class="kicker" data-content="pn.h3.2">With Render</h3>
               <p data-content="pn.render.body">
-                You pick the region, per customer. Your web service, private services, background workers and
-                Render Postgres / Key Value share a <strong>private network</strong> inside the same region and
-                workspace, and talk over internal hostnames like <code>api:10000</code> or
-                <code>acme-db</code>. Your database never has to be reachable from the internet.
+                You pick the region, per customer. Your web service, private
+                services, background workers and Render Postgres / Key Value
+                share a <strong>private network</strong> inside the same region
+                and workspace, and talk over internal hostnames like
+                <code>api:10000</code> or <code>acme-db</code>. Your database
+                never has to be reachable from the internet.
               </p>
             </div>
           </div>
 
           <div class="diagrams">
             <figure class="diagram diagram--bad reveal">
-              <svg viewBox="0 0 520 340" role="img" aria-labelledby="d1-title d1-desc">
-                <title id="d1-title">Request path across separate providers</title>
+              <svg
+                viewBox="0 0 520 340"
+                role="img"
+                aria-labelledby="d1-title d1-desc"
+              >
+                <title id="d1-title">
+                  Request path across separate providers
+                </title>
                 <desc id="d1-desc">
-                  A user request reaches an edge function on a hosting provider, then travels over the public internet
-                  through several hops to a database run by a different vendor, then to a separate queue vendor. The
-                  path is long, dashed and crosses three provider boundaries.
+                  A user request reaches an edge function on a hosting provider,
+                  then travels over the public internet through several hops to
+                  a database run by a different vendor, then to a separate queue
+                  vendor. The path is long, dashed and crosses three provider
+                  boundaries.
                 </desc>
                 <defs>
-                  <marker id="arrow-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                    <path d="M0 0 10 5 0 10z" fill="#8f8f8f" ></path>
+                  <marker
+                    id="arrow-bad"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="7"
+                    markerHeight="7"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M0 0 10 5 0 10z" fill="#8f8f8f"></path>
                   </marker>
                 </defs>
                 <!-- provider boxes -->
-                <rect x="14" y="30" width="148" height="94" class="svg-box" ></rect>
+                <rect
+                  x="14"
+                  y="30"
+                  width="148"
+                  height="94"
+                  class="svg-box"
+                ></rect>
                 <text x="26" y="52" class="svg-label">Hosting provider</text>
                 <text x="26" y="68" class="svg-sub">region: default</text>
-                <rect x="36" y="80" width="104" height="32" class="svg-node" ></rect>
-                <text x="88" y="101" class="svg-node-text" text-anchor="middle">fn /api/chat</text>
+                <rect
+                  x="36"
+                  y="80"
+                  width="104"
+                  height="32"
+                  class="svg-node"
+                ></rect>
+                <text x="88" y="101" class="svg-node-text" text-anchor="middle">
+                  fn /api/chat
+                </text>
 
-                <rect x="376" y="30" width="130" height="94" class="svg-box" ></rect>
+                <rect
+                  x="376"
+                  y="30"
+                  width="130"
+                  height="94"
+                  class="svg-box"
+                ></rect>
                 <text x="388" y="52" class="svg-label">Database vendor</text>
                 <text x="388" y="68" class="svg-sub">public endpoint</text>
-                <rect x="392" y="80" width="98" height="32" class="svg-node" ></rect>
-                <text x="441" y="101" class="svg-node-text" text-anchor="middle">postgres</text>
+                <rect
+                  x="392"
+                  y="80"
+                  width="98"
+                  height="32"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="441"
+                  y="101"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  postgres
+                </text>
 
-                <rect x="190" y="232" width="142" height="94" class="svg-box" ></rect>
+                <rect
+                  x="190"
+                  y="232"
+                  width="142"
+                  height="94"
+                  class="svg-box"
+                ></rect>
                 <text x="202" y="254" class="svg-label">Queue vendor</text>
                 <text x="202" y="270" class="svg-sub">another network</text>
-                <rect x="210" y="282" width="100" height="32" class="svg-node" ></rect>
-                <text x="260" y="303" class="svg-node-text" text-anchor="middle">jobs queue</text>
+                <rect
+                  x="210"
+                  y="282"
+                  width="100"
+                  height="32"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="260"
+                  y="303"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  jobs queue
+                </text>
                 <!-- public internet zone -->
-                <rect x="194" y="78" width="134" height="94" class="svg-net" ></rect>
-                <text x="261" y="96" class="svg-sub" text-anchor="middle">public internet</text>
+                <rect
+                  x="194"
+                  y="78"
+                  width="134"
+                  height="94"
+                  class="svg-net"
+                ></rect>
+                <text x="261" y="96" class="svg-sub" text-anchor="middle">
+                  public internet
+                </text>
 
                 <!-- long dashed path -->
-                <path class="svg-path-bad" d="M140 96 C 172 96, 180 144, 212 136 S 250 164, 270 148 S 312 122, 336 136 S 365 106, 390 96" marker-end="url(#arrow-bad)" ></path>
-                <path class="svg-path-bad" d="M441 114 C 447 172, 438 200, 382 218 S 338 264, 312 298" marker-end="url(#arrow-bad)" ></path>
-                <rect x="208.5" y="132.5" width="7" height="7" class="svg-hop" ></rect>
-                <rect x="266.5" y="144.5" width="7" height="7" class="svg-hop" ></rect>
-                <rect x="332.5" y="132.5" width="7" height="7" class="svg-hop" ></rect>
-                <rect x="378.5" y="214.5" width="7" height="7" class="svg-hop" ></rect>
-                <text x="26" y="194" class="svg-warn">TLS handshakes, DNS,</text>
-                <text x="26" y="210" class="svg-warn">egress, public exposure</text>
+                <path
+                  class="svg-path-bad"
+                  d="M140 96 C 172 96, 180 144, 212 136 S 250 164, 270 148 S 312 122, 336 136 S 365 106, 390 96"
+                  marker-end="url(#arrow-bad)"
+                ></path>
+                <path
+                  class="svg-path-bad"
+                  d="M441 114 C 447 172, 438 200, 382 218 S 338 264, 312 298"
+                  marker-end="url(#arrow-bad)"
+                ></path>
+                <rect
+                  x="208.5"
+                  y="132.5"
+                  width="7"
+                  height="7"
+                  class="svg-hop"
+                ></rect>
+                <rect
+                  x="266.5"
+                  y="144.5"
+                  width="7"
+                  height="7"
+                  class="svg-hop"
+                ></rect>
+                <rect
+                  x="332.5"
+                  y="132.5"
+                  width="7"
+                  height="7"
+                  class="svg-hop"
+                ></rect>
+                <rect
+                  x="378.5"
+                  y="214.5"
+                  width="7"
+                  height="7"
+                  class="svg-hop"
+                ></rect>
+                <text x="26" y="194" class="svg-warn">
+                  TLS handshakes, DNS,
+                </text>
+                <text x="26" y="210" class="svg-warn">
+                  egress, public exposure
+                </text>
               </svg>
-              <figcaption data-content="pn.figcaption.1"><span class="dot dot--muted" aria-hidden="true"></span> Public internet path: long, many hops, three providers.</figcaption>
+              <figcaption data-content="pn.figcaption.1">
+                <span class="dot dot--muted" aria-hidden="true"></span> Public
+                internet path: long, many hops, three providers.
+              </figcaption>
             </figure>
 
             <figure class="diagram diagram--good reveal">
-              <svg viewBox="0 0 520 340" role="img" aria-labelledby="d2-title d2-desc">
-                <title id="d2-title">Request path on a Render private network</title>
+              <svg
+                viewBox="0 0 520 340"
+                role="img"
+                aria-labelledby="d2-title d2-desc"
+              >
+                <title id="d2-title">
+                  Request path on a Render private network
+                </title>
                 <desc id="d2-desc">
-                  A single region box labeled Render, Oregon, contains a web service, a private API service, a worker,
-                  Render Postgres and Key Value. Short solid links connect them over the private network using internal
-                  hostnames. Only the web service is exposed to the public internet.
+                  A single region box labeled Render, Oregon, contains a web
+                  service, a private API service, a worker, Render Postgres and
+                  Key Value. Short solid links connect them over the private
+                  network using internal hostnames. Only the web service is
+                  exposed to the public internet.
                 </desc>
                 <defs>
-                  <marker id="arrow-good" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                    <path d="M0 0 10 5 0 10z" fill="#a689ff" ></path>
+                  <marker
+                    id="arrow-good"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="7"
+                    markerHeight="7"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M0 0 10 5 0 10z" fill="#a689ff"></path>
                   </marker>
                 </defs>
-                <text x="260" y="22" class="svg-sub" text-anchor="middle">users (HTTPS)</text>
-                <path d="M260 28 V 62" class="svg-path-good" marker-end="url(#arrow-good)" ></path>
-                <rect x="20" y="66" width="480" height="262" class="svg-region" ></rect>
-                <text x="38" y="92" class="svg-label svg-label--accent">Render · region: oregon</text>
-                <text x="38" y="108" class="svg-sub">private network · same workspace</text>
+                <text x="260" y="22" class="svg-sub" text-anchor="middle">
+                  users (HTTPS)
+                </text>
+                <path
+                  d="M260 28 V 62"
+                  class="svg-path-good"
+                  marker-end="url(#arrow-good)"
+                ></path>
+                <rect
+                  x="20"
+                  y="66"
+                  width="480"
+                  height="262"
+                  class="svg-region"
+                ></rect>
+                <text x="38" y="92" class="svg-label svg-label--accent">
+                  Render · region: oregon
+                </text>
+                <text x="38" y="108" class="svg-sub">
+                  private network · same workspace
+                </text>
 
-                <rect x="200" y="122" width="120" height="42" class="svg-node svg-node--accent" ></rect>
-                <text x="260" y="148" class="svg-node-text" text-anchor="middle">web</text>
+                <rect
+                  x="200"
+                  y="122"
+                  width="120"
+                  height="42"
+                  class="svg-node svg-node--accent"
+                ></rect>
+                <text
+                  x="260"
+                  y="148"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  web
+                </text>
 
-                <rect x="60" y="196" width="120" height="42" class="svg-node" ></rect>
-                <text x="120" y="216" class="svg-node-text" text-anchor="middle">api</text>
-                <text x="120" y="230" class="svg-mono" text-anchor="middle">pserv</text>
+                <rect
+                  x="60"
+                  y="196"
+                  width="120"
+                  height="42"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="120"
+                  y="216"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  api
+                </text>
+                <text x="120" y="230" class="svg-mono" text-anchor="middle">
+                  pserv
+                </text>
 
-                <rect x="340" y="196" width="120" height="42" class="svg-node" ></rect>
-                <text x="400" y="222" class="svg-node-text" text-anchor="middle">worker</text>
+                <rect
+                  x="340"
+                  y="196"
+                  width="120"
+                  height="42"
+                  class="svg-node"
+                ></rect>
+                <text
+                  x="400"
+                  y="222"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  worker
+                </text>
 
-                <rect x="60" y="270" width="120" height="42" class="svg-node svg-node--data" ></rect>
-                <text x="120" y="296" class="svg-node-text" text-anchor="middle">Postgres</text>
+                <rect
+                  x="60"
+                  y="270"
+                  width="120"
+                  height="42"
+                  class="svg-node svg-node--data"
+                ></rect>
+                <text
+                  x="120"
+                  y="296"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  Postgres
+                </text>
 
-                <rect x="340" y="270" width="120" height="42" class="svg-node svg-node--data" ></rect>
-                <text x="400" y="296" class="svg-node-text" text-anchor="middle">Key Value</text>
+                <rect
+                  x="340"
+                  y="270"
+                  width="120"
+                  height="42"
+                  class="svg-node svg-node--data"
+                ></rect>
+                <text
+                  x="400"
+                  y="296"
+                  class="svg-node-text"
+                  text-anchor="middle"
+                >
+                  Key Value
+                </text>
 
-                <path d="M228 164 L 150 196" class="svg-path-good" marker-end="url(#arrow-good)" ></path>
-                <path d="M292 164 L 370 196" class="svg-path-good" marker-end="url(#arrow-good)" ></path>
-                <path d="M120 238 V 268" class="svg-path-good" marker-end="url(#arrow-good)" ></path>
-                <path d="M400 238 V 268" class="svg-path-good" marker-end="url(#arrow-good)" ></path>
-                <path d="M340 220 L 182 284" class="svg-path-good svg-path-faint" marker-end="url(#arrow-good)" ></path>
-                <text x="176" y="180" class="svg-mono" text-anchor="end">api:10000</text>
+                <path
+                  d="M228 164 L 150 196"
+                  class="svg-path-good"
+                  marker-end="url(#arrow-good)"
+                ></path>
+                <path
+                  d="M292 164 L 370 196"
+                  class="svg-path-good"
+                  marker-end="url(#arrow-good)"
+                ></path>
+                <path
+                  d="M120 238 V 268"
+                  class="svg-path-good"
+                  marker-end="url(#arrow-good)"
+                ></path>
+                <path
+                  d="M400 238 V 268"
+                  class="svg-path-good"
+                  marker-end="url(#arrow-good)"
+                ></path>
+                <path
+                  d="M340 220 L 182 284"
+                  class="svg-path-good svg-path-faint"
+                  marker-end="url(#arrow-good)"
+                ></path>
+                <text x="176" y="180" class="svg-mono" text-anchor="end">
+                  api:10000
+                </text>
                 <text x="132" y="258" class="svg-mono">acme-db</text>
                 <text x="412" y="258" class="svg-mono">acme-kv</text>
               </svg>
-              <figcaption data-content="pn.figcaption.2"><span class="dot dot--accent" aria-hidden="true"></span> Render private network: short, contained in one region.</figcaption>
+              <figcaption data-content="pn.figcaption.2">
+                <span class="dot dot--accent" aria-hidden="true"></span> Render
+                private network: short, contained in one region.
+              </figcaption>
             </figure>
           </div>
 
-          <ul class="result-row reveal" aria-label="Results of private networking">
-            <li data-content="pn.li.1"><strong>Lower latency</strong><span>Services and data sit in the same region.</span></li>
-            <li data-content="pn.li.2"><strong>Fewer hops</strong><span>No round trip across providers for every query.</span></li>
-            <li data-content="pn.li.3"><strong>No public database</strong><span>Postgres and Key Value can stay internal-only.</span></li>
+          <ul
+            class="result-row reveal"
+            aria-label="Results of private networking"
+          >
+            <li data-content="pn.li.1">
+              <strong>Lower latency</strong
+              ><span>Services and data sit in the same region.</span>
+            </li>
+            <li data-content="pn.li.2">
+              <strong>Fewer hops</strong
+              ><span>No round trip across providers for every query.</span>
+            </li>
+            <li data-content="pn.li.3">
+              <strong>No public database</strong
+              ><span>Postgres and Key Value can stay internal-only.</span>
+            </li>
           </ul>
         </div>
       </section>
@@ -282,30 +743,44 @@
       <section class="section" id="observability" aria-labelledby="obs-title">
         <div class="container">
           <header class="section-head reveal">
-            <p class="label" data-content="obs.label.1"><span class="num">03</span> Observability</p>
-            <h2 id="obs-title" data-content="obs.h2.1">When a request dies in flight, see exactly where.</h2>
+            <p class="label" data-content="obs.label.1">
+              <span class="num">03</span> Observability
+            </p>
+            <h2 id="obs-title" data-content="obs.h2.1">
+              Trace a dropped request.
+            </h2>
           </header>
 
           <div class="obs-grid">
             <div class="prose reveal">
-              <h3 class="kicker kicker--muted" data-content="obs.h3.1">Across providers</h3>
+              <h3 class="kicker kicker--muted" data-content="obs.h3.1">
+                Across providers
+              </h3>
               <p data-content="obs.p.1">
-                That same cross-provider request can fail somewhere between the function and the database, and no one
-                notices. Each vendor sees only its own slice: the function logs a timeout, the database logs nothing
-                unusual, the queue never got the message. The failure lives in the gap between dashboards.
+                That same cross-provider request can fail somewhere between the
+                function and the database, and no one notices. Each vendor sees
+                only its own slice: the function logs a timeout, the database
+                logs nothing unusual, the queue never got the message. The
+                failure lives in the gap between dashboards.
               </p>
               <h3 class="kicker" data-content="obs.h3.2">On Render</h3>
               <p data-content="obs.p.2">
-                Logs and metrics cover every layer: web services, APIs, workers, cron jobs and Postgres, all in one
-                place. When something breaks <em>between</em> layers, you and your coding agent follow one request
-                end to end.
+                Logs and metrics cover every layer: web services, APIs, workers,
+                cron jobs and Postgres, all in one place. When something breaks
+                <em>between</em> layers, you and your coding agent follow one
+                request end to end.
               </p>
               <p data-content="obs.p.3">
-                The <strong>Render CLI</strong> and <strong>Render MCP server</strong> let an agent pull logs and
-                metrics directly, so Codex or your agent of choice can triage a customer incident with you without
-                copying and pasting from four tabs.
+                The <strong>Render CLI</strong> and
+                <strong>Render MCP server</strong> let an agent pull logs and
+                metrics directly, so Codex or your agent of choice can triage a
+                customer incident with you without copying and pasting from four
+                tabs.
               </p>
-              <pre class="cli mono" aria-label="Illustrative CLI command"><code><span class="prompt">$</span> render logs -r srv-api,srv-worker,dpg-acme-db \
+              <pre
+                class="cli mono"
+                aria-label="Illustrative CLI command"
+              ><code><span class="prompt">$</span> render logs -r srv-api,srv-worker,dpg-acme-db \
     -o text | grep req_7f3a9c</code></pre>
             </div>
 
@@ -314,21 +789,81 @@
                 <p class="mono">acme-agent · production · logs</p>
               </div>
               <figcaption class="sr-only">
-                Mock unified log stream following request req_7f3a9c across the web, api, worker and postgres
-                services. The request ends in a Postgres statement timeout that the api surfaces as a 504 error.
+                Mock unified log stream following request req_7f3a9c across the
+                web, api, worker and postgres services. The request ends in a
+                Postgres statement timeout that the api surfaces as a 504 error.
               </figcaption>
               <ol class="log-stream mono">
-                <li><time>14:02:11.204</time><span class="svc">web</span><span class="msg">GET /chat 200 · <mark class="rid">req_7f3a9c</mark> · user=ops@acme</span></li>
-                <li><time>14:02:11.219</time><span class="svc">api</span><span class="msg">POST /v1/answer · <mark class="rid">req_7f3a9c</mark> · model=gpt</span></li>
-                <li class="dim"><time>14:02:11.231</time><span class="svc">worker</span><span class="msg">heartbeat ok · queue depth=3</span></li>
-                <li><time>14:02:11.236</time><span class="svc">api</span><span class="msg">retrieve top_k=8 from acme-db · <mark class="rid">req_7f3a9c</mark></span></li>
-                <li><time>14:02:11.240</time><span class="svc">postgres</span><span class="msg">LOG: statement start · app=api · <mark class="rid">req_7f3a9c</mark></span></li>
-                <li><time>14:02:11.302</time><span class="svc">worker</span><span class="msg">job embed_docs started · <mark class="rid">req_7f3a9c</mark> · 412 chunks</span></li>
-                <li><time>14:02:11.305</time><span class="svc">postgres</span><span class="msg">LOG: lock wait on table doc_chunks · pid 4412</span></li>
-                <li class="dim"><time>14:02:12.010</time><span class="svc">web</span><span class="msg">GET /health 200</span></li>
-                <li class="warn"><time>14:02:16.240</time><span class="svc">postgres</span><span class="msg">WARN: lock held 5000ms by worker · reindex doc_chunks</span></li>
-                <li class="error" aria-label="Error line"><time>14:02:21.241</time><span class="svc">postgres</span><span class="msg">ERROR: canceling statement due to statement timeout · <mark class="rid">req_7f3a9c</mark></span></li>
-                <li class="error"><time>14:02:21.244</time><span class="svc">api</span><span class="msg">504 upstream acme-db timed out · <mark class="rid">req_7f3a9c</mark> → root cause: worker reindex lock</span></li>
+                <li>
+                  <time>14:02:11.204</time><span class="svc">web</span
+                  ><span class="msg"
+                    >GET /chat 200 · <mark class="rid">req_7f3a9c</mark> ·
+                    user=ops@acme</span
+                  >
+                </li>
+                <li>
+                  <time>14:02:11.219</time><span class="svc">api</span
+                  ><span class="msg"
+                    >POST /v1/answer · <mark class="rid">req_7f3a9c</mark> ·
+                    model=gpt</span
+                  >
+                </li>
+                <li class="dim">
+                  <time>14:02:11.231</time><span class="svc">worker</span
+                  ><span class="msg">heartbeat ok · queue depth=3</span>
+                </li>
+                <li>
+                  <time>14:02:11.236</time><span class="svc">api</span
+                  ><span class="msg"
+                    >retrieve top_k=8 from acme-db ·
+                    <mark class="rid">req_7f3a9c</mark></span
+                  >
+                </li>
+                <li>
+                  <time>14:02:11.240</time><span class="svc">postgres</span
+                  ><span class="msg"
+                    >LOG: statement start · app=api ·
+                    <mark class="rid">req_7f3a9c</mark></span
+                  >
+                </li>
+                <li>
+                  <time>14:02:11.302</time><span class="svc">worker</span
+                  ><span class="msg"
+                    >job embed_docs started ·
+                    <mark class="rid">req_7f3a9c</mark> · 412 chunks</span
+                  >
+                </li>
+                <li>
+                  <time>14:02:11.305</time><span class="svc">postgres</span
+                  ><span class="msg"
+                    >LOG: lock wait on table doc_chunks · pid 4412</span
+                  >
+                </li>
+                <li class="dim">
+                  <time>14:02:12.010</time><span class="svc">web</span
+                  ><span class="msg">GET /health 200</span>
+                </li>
+                <li class="warn">
+                  <time>14:02:16.240</time><span class="svc">postgres</span
+                  ><span class="msg"
+                    >WARN: lock held 5000ms by worker · reindex doc_chunks</span
+                  >
+                </li>
+                <li class="error" aria-label="Error line">
+                  <time>14:02:21.241</time><span class="svc">postgres</span
+                  ><span class="msg"
+                    >ERROR: canceling statement due to statement timeout ·
+                    <mark class="rid">req_7f3a9c</mark></span
+                  >
+                </li>
+                <li class="error">
+                  <time>14:02:21.244</time><span class="svc">api</span
+                  ><span class="msg"
+                    >504 upstream acme-db timed out ·
+                    <mark class="rid">req_7f3a9c</mark> → root cause: worker
+                    reindex lock</span
+                  >
+                </li>
               </ol>
             </figure>
           </div>
@@ -339,153 +874,439 @@
       <section class="section" id="agents" aria-labelledby="agents-title">
         <div class="container">
           <header class="section-head reveal">
-            <p class="label" data-content="agents.label.1"><span class="num">04</span> Built for agents</p>
-            <h2 id="agents-title" data-content="agents.h2.1">Render is the best platform to deploy agentic apps.</h2>
+            <p class="label" data-content="agents.label.1">
+              <span class="num">04</span> Built for agents
+            </p>
+            <h2 id="agents-title" data-content="agents.h2.1">
+              Render is the best platform to deploy agentic apps.
+            </h2>
             <p class="section-lede" data-content="agents.p.1">
-              Agents need two things serverless functions handle poorly: long-running, retryable, multi-step
-              execution, and a safe place to run the code they generate. Render provides both as first-class
-              primitives in the same project as the rest of your app: Workflows run in your region on its private
-              network, and Sandboxes keep generated code isolated from it.
+              Agents need two things serverless functions handle poorly:
+              long-running, retryable, multi-step execution, and a safe place to
+              run the code they generate. Render provides both as first-class
+              primitives in the same project as the rest of your app: Workflows
+              run in your region on its private network, and Sandboxes keep
+              generated code isolated from it.
             </p>
           </header>
 
           <div class="two-col">
             <div class="prose reveal">
-              <h3 class="kicker" data-content="agents.h3.1">Workflows <span class="kicker-sub">durable agent runs</span></h3>
+              <h3 class="kicker" data-content="agents.h3.1">
+                Workflows <span class="kicker-sub">durable agent runs</span>
+              </h3>
               <ul class="bullets">
-                <li data-content="agents.li.1">Define tasks as plain TypeScript or Python functions with the Render SDK.</li>
-                <li data-content="agents.li.2">Start runs from your web service, another task or the API.</li>
-                <li data-content="agents.li.3">Each run gets its own instance, retries automatically with backoff, can last up to 24 hours, and scales to zero when idle.</li>
-                <li data-content="agents.li.4">Chain subtasks and fan out in parallel, with no separate queue or broker.</li>
-                <li data-content="agents.li.5">Task runs reach your services and datastores in the same region over the private network.</li>
+                <li data-content="agents.li.1">
+                  Define tasks as plain TypeScript or Python functions with the
+                  Render SDK.
+                </li>
+                <li data-content="agents.li.2">
+                  Start runs from your web service, another task or the API.
+                </li>
+                <li data-content="agents.li.3">
+                  Each run gets its own instance, retries automatically with
+                  backoff, can last up to 24 hours, and scales to zero when
+                  idle.
+                </li>
+                <li data-content="agents.li.4">
+                  Chain subtasks and fan out in parallel, with no separate queue
+                  or broker.
+                </li>
+                <li data-content="agents.li.5">
+                  Task runs reach your services and datastores in the same
+                  region over the private network.
+                </li>
               </ul>
             </div>
             <div class="prose reveal">
-              <h3 class="kicker" data-content="agents.h3.2">Sandboxes <span class="kicker-sub">isolated code execution</span> <span class="tag">Early access</span></h3>
+              <h3 class="kicker" data-content="agents.h3.2">
+                Sandboxes
+                <span class="kicker-sub">isolated code execution</span>
+                <span class="tag">Early access</span>
+              </h3>
               <ul class="bullets">
-                <li data-content="agents.li.6">Ephemeral, isolated environments for untrusted or agent-generated code: install packages, write files, run scripts and tests.</li>
-                <li data-content="agents.li.7">Your production infrastructure is never exposed to that code.</li>
-                <li data-content="agents.li.8">Create them from the same Render SDK or CLI; terminate them when done or let them time out.</li>
-                <li data-content="agents.li.9">Snapshots let you reuse a prepared environment.</li>
+                <li data-content="agents.li.6">
+                  Ephemeral, isolated environments for untrusted or
+                  agent-generated code: install packages, write files, run
+                  scripts and tests.
+                </li>
+                <li data-content="agents.li.7">
+                  Your production infrastructure is never exposed to that code.
+                </li>
+                <li data-content="agents.li.8">
+                  Create them from the same Render SDK or CLI; terminate them
+                  when done or let them time out.
+                </li>
+                <li data-content="agents.li.9">
+                  Snapshots let you reuse a prepared environment.
+                </li>
               </ul>
             </div>
           </div>
 
           <figure class="agent-flow reveal">
-            <svg class="agent-flow-wide" viewBox="0 0 880 316" role="img" aria-labelledby="af-title af-desc">
+            <svg
+              class="agent-flow-wide"
+              viewBox="0 0 880 316"
+              role="img"
+              aria-labelledby="af-title af-desc"
+            >
               <title id="af-title">One agent request on one Render stack</title>
               <desc id="af-desc">
-                An agent request enters a web service inside a Render region box labeled region oregon, private network.
-                The web service starts a workflow task named runAgent, which fans out to three subtasks: gatherContext,
-                callModel and executeCode. gatherContext and callModel read and write Render Postgres over the private
-                network. executeCode runs code in a separate sandbox, drawn with a dashed border and labeled isolated,
-                outside the private network box.
+                An agent request enters a web service inside a Render region box
+                labeled region oregon, private network. The web service starts a
+                workflow task named runAgent, which fans out to three subtasks:
+                gatherContext, callModel and executeCode. gatherContext and
+                callModel read and write Render Postgres over the private
+                network. executeCode runs code in a separate sandbox, drawn with
+                a dashed border and labeled isolated, outside the private
+                network box.
               </desc>
               <defs>
-                <marker id="arrow-af" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0 0 10 5 0 10z" fill="#a3a3a3" ></path>
+                <marker
+                  id="arrow-af"
+                  viewBox="0 0 10 10"
+                  refX="8"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M0 0 10 5 0 10z" fill="#a3a3a3"></path>
                 </marker>
               </defs>
-              <text x="95" y="16" class="svg-sub" text-anchor="middle">agent request (HTTPS)</text>
-              <path d="M95 22 V 156" class="svg-flow" marker-end="url(#arrow-af)" ></path>
+              <text x="95" y="16" class="svg-sub" text-anchor="middle">
+                agent request (HTTPS)
+              </text>
+              <path
+                d="M95 22 V 156"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
 
-              <rect x="10" y="36" width="680" height="264" class="svg-region-plain" ></rect>
-              <text x="170" y="62" class="svg-label">Render · region: oregon</text>
-              <text x="170" y="78" class="svg-sub">private network · same workspace</text>
+              <rect
+                x="10"
+                y="36"
+                width="680"
+                height="264"
+                class="svg-region-plain"
+              ></rect>
+              <text x="170" y="62" class="svg-label">
+                Render · region: oregon
+              </text>
+              <text x="170" y="78" class="svg-sub">
+                private network · same workspace
+              </text>
 
-              <rect x="40" y="160" width="110" height="44" class="svg-node" ></rect>
-              <text x="95" y="187" class="svg-node-text" text-anchor="middle">web</text>
+              <rect
+                x="40"
+                y="160"
+                width="110"
+                height="44"
+                class="svg-node"
+              ></rect>
+              <text x="95" y="187" class="svg-node-text" text-anchor="middle">
+                web
+              </text>
 
-              <path d="M150 182 H 196" class="svg-flow" marker-end="url(#arrow-af)" ></path>
-              <text x="173" y="172" class="svg-mono" text-anchor="middle">starts</text>
+              <path
+                d="M150 182 H 196"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
+              <text x="173" y="172" class="svg-mono" text-anchor="middle">
+                starts
+              </text>
 
-              <rect x="198" y="152" width="140" height="60" class="svg-node svg-node--accent" ></rect>
-              <text x="268" y="179" class="svg-node-text" text-anchor="middle">runAgent</text>
-              <text x="268" y="197" class="svg-mono" text-anchor="middle">workflow</text>
+              <rect
+                x="198"
+                y="152"
+                width="140"
+                height="60"
+                class="svg-node svg-node--accent"
+              ></rect>
+              <text x="268" y="179" class="svg-node-text" text-anchor="middle">
+                runAgent
+              </text>
+              <text x="268" y="197" class="svg-mono" text-anchor="middle">
+                workflow
+              </text>
 
-              <path d="M338 182 H 358 M358 116 V 248" class="svg-flow" ></path>
-              <path d="M358 116 H 378" class="svg-flow" marker-end="url(#arrow-af)" ></path>
-              <path d="M358 182 H 378" class="svg-flow" marker-end="url(#arrow-af)" ></path>
-              <path d="M358 248 H 378" class="svg-flow" marker-end="url(#arrow-af)" ></path>
+              <path d="M338 182 H 358 M358 116 V 248" class="svg-flow"></path>
+              <path
+                d="M358 116 H 378"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
+              <path
+                d="M358 182 H 378"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
+              <path
+                d="M358 248 H 378"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
 
-              <rect x="380" y="96" width="140" height="40" class="svg-node" ></rect>
-              <text x="450" y="121" class="svg-node-text" text-anchor="middle">gatherContext</text>
-              <rect x="380" y="162" width="140" height="40" class="svg-node" ></rect>
-              <text x="450" y="187" class="svg-node-text" text-anchor="middle">callModel</text>
-              <rect x="380" y="228" width="140" height="40" class="svg-node" ></rect>
-              <text x="450" y="253" class="svg-node-text" text-anchor="middle">executeCode</text>
+              <rect
+                x="380"
+                y="96"
+                width="140"
+                height="40"
+                class="svg-node"
+              ></rect>
+              <text x="450" y="121" class="svg-node-text" text-anchor="middle">
+                gatherContext
+              </text>
+              <rect
+                x="380"
+                y="162"
+                width="140"
+                height="40"
+                class="svg-node"
+              ></rect>
+              <text x="450" y="187" class="svg-node-text" text-anchor="middle">
+                callModel
+              </text>
+              <rect
+                x="380"
+                y="228"
+                width="140"
+                height="40"
+                class="svg-node"
+              ></rect>
+              <text x="450" y="253" class="svg-node-text" text-anchor="middle">
+                executeCode
+              </text>
 
-              <path d="M520 116 H 558" class="svg-flow" marker-end="url(#arrow-af)" ></path>
-              <path d="M520 182 H 558" class="svg-flow" marker-end="url(#arrow-af)" ></path>
-              <rect x="560" y="96" width="110" height="106" class="svg-node svg-node--data" ></rect>
-              <text x="615" y="146" class="svg-node-text" text-anchor="middle">postgres</text>
-              <text x="615" y="164" class="svg-mono" text-anchor="middle">acme-db</text>
+              <path
+                d="M520 116 H 558"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
+              <path
+                d="M520 182 H 558"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
+              <rect
+                x="560"
+                y="96"
+                width="110"
+                height="106"
+                class="svg-node svg-node--data"
+              ></rect>
+              <text x="615" y="146" class="svg-node-text" text-anchor="middle">
+                postgres
+              </text>
+              <text x="615" y="164" class="svg-mono" text-anchor="middle">
+                acme-db
+              </text>
 
-              <path d="M520 248 H 716" class="svg-flow" marker-end="url(#arrow-af)" ></path>
-              <text x="618" y="240" class="svg-mono" text-anchor="middle">run code</text>
-              <rect x="720" y="222" width="150" height="52" class="svg-sandbox" ></rect>
-              <text x="795" y="244" class="svg-node-text" text-anchor="middle">sandbox</text>
-              <text x="795" y="262" class="svg-mono" text-anchor="middle">isolated</text>
+              <path
+                d="M520 248 H 716"
+                class="svg-flow"
+                marker-end="url(#arrow-af)"
+              ></path>
+              <text x="618" y="240" class="svg-mono" text-anchor="middle">
+                run code
+              </text>
+              <rect
+                x="720"
+                y="222"
+                width="150"
+                height="52"
+                class="svg-sandbox"
+              ></rect>
+              <text x="795" y="244" class="svg-node-text" text-anchor="middle">
+                sandbox
+              </text>
+              <text x="795" y="262" class="svg-mono" text-anchor="middle">
+                isolated
+              </text>
             </svg>
 
-            <svg class="agent-flow-tall" viewBox="0 0 360 570" role="img" aria-labelledby="afm-title afm-desc">
-              <title id="afm-title">One agent request on one Render stack</title>
+            <svg
+              class="agent-flow-tall"
+              viewBox="0 0 360 570"
+              role="img"
+              aria-labelledby="afm-title afm-desc"
+            >
+              <title id="afm-title">
+                One agent request on one Render stack
+              </title>
               <desc id="afm-desc">
-                An agent request enters a web service inside a Render region box labeled region oregon, private network.
-                The web service starts a workflow task named runAgent, which fans out to three subtasks: gatherContext,
-                callModel and executeCode. gatherContext and callModel read and write Render Postgres over the private
-                network. executeCode runs code in a separate sandbox, drawn with a dashed border and labeled isolated,
-                below and outside the private network box.
+                An agent request enters a web service inside a Render region box
+                labeled region oregon, private network. The web service starts a
+                workflow task named runAgent, which fans out to three subtasks:
+                gatherContext, callModel and executeCode. gatherContext and
+                callModel read and write Render Postgres over the private
+                network. executeCode runs code in a separate sandbox, drawn with
+                a dashed border and labeled isolated, below and outside the
+                private network box.
               </desc>
               <defs>
-                <marker id="arrow-afm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0 0 10 5 0 10z" fill="#a3a3a3" ></path>
+                <marker
+                  id="arrow-afm"
+                  viewBox="0 0 10 10"
+                  refX="8"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M0 0 10 5 0 10z" fill="#a3a3a3"></path>
                 </marker>
               </defs>
-              <text x="180" y="16" class="svg-sub" text-anchor="middle">agent request (HTTPS)</text>
-              <path d="M180 22 V 78" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
+              <text x="180" y="16" class="svg-sub" text-anchor="middle">
+                agent request (HTTPS)
+              </text>
+              <path
+                d="M180 22 V 78"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
 
-              <rect x="10" y="40" width="340" height="438" class="svg-region-plain" ></rect>
+              <rect
+                x="10"
+                y="40"
+                width="340"
+                height="438"
+                class="svg-region-plain"
+              ></rect>
 
-              <rect x="125" y="80" width="110" height="40" class="svg-node" ></rect>
-              <text x="180" y="105" class="svg-node-text" text-anchor="middle">web</text>
+              <rect
+                x="125"
+                y="80"
+                width="110"
+                height="40"
+                class="svg-node"
+              ></rect>
+              <text x="180" y="105" class="svg-node-text" text-anchor="middle">
+                web
+              </text>
 
-              <path d="M180 120 V 148" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
+              <path
+                d="M180 120 V 148"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
               <text x="190" y="139" class="svg-mono">starts</text>
 
-              <rect x="105" y="150" width="150" height="54" class="svg-node svg-node--accent" ></rect>
-              <text x="180" y="174" class="svg-node-text" text-anchor="middle">runAgent</text>
-              <text x="180" y="192" class="svg-mono" text-anchor="middle">workflow</text>
+              <rect
+                x="105"
+                y="150"
+                width="150"
+                height="54"
+                class="svg-node svg-node--accent"
+              ></rect>
+              <text x="180" y="174" class="svg-node-text" text-anchor="middle">
+                runAgent
+              </text>
+              <text x="180" y="192" class="svg-mono" text-anchor="middle">
+                workflow
+              </text>
 
-              <path d="M180 204 V 216 H 84 V 346" class="svg-flow" ></path>
-              <path d="M84 250 H 108" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
-              <path d="M84 298 H 108" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
-              <path d="M84 346 H 108" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
+              <path d="M180 204 V 216 H 84 V 346" class="svg-flow"></path>
+              <path
+                d="M84 250 H 108"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
+              <path
+                d="M84 298 H 108"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
+              <path
+                d="M84 346 H 108"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
 
-              <rect x="110" y="232" width="140" height="36" class="svg-node" ></rect>
-              <text x="180" y="255" class="svg-node-text" text-anchor="middle">gatherContext</text>
-              <rect x="110" y="280" width="140" height="36" class="svg-node" ></rect>
-              <text x="180" y="303" class="svg-node-text" text-anchor="middle">callModel</text>
-              <rect x="110" y="328" width="140" height="36" class="svg-node" ></rect>
-              <text x="180" y="351" class="svg-node-text" text-anchor="middle">executeCode</text>
+              <rect
+                x="110"
+                y="232"
+                width="140"
+                height="36"
+                class="svg-node"
+              ></rect>
+              <text x="180" y="255" class="svg-node-text" text-anchor="middle">
+                gatherContext
+              </text>
+              <rect
+                x="110"
+                y="280"
+                width="140"
+                height="36"
+                class="svg-node"
+              ></rect>
+              <text x="180" y="303" class="svg-node-text" text-anchor="middle">
+                callModel
+              </text>
+              <rect
+                x="110"
+                y="328"
+                width="140"
+                height="36"
+                class="svg-node"
+              ></rect>
+              <text x="180" y="351" class="svg-node-text" text-anchor="middle">
+                executeCode
+              </text>
 
-              <path d="M250 250 H 290 V 412 H 252" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
-              <path d="M250 298 H 290" class="svg-flow" ></path>
-              <rect x="110" y="392" width="140" height="40" class="svg-node svg-node--data" ></rect>
-              <text x="180" y="417" class="svg-node-text" text-anchor="middle">postgres</text>
+              <path
+                d="M250 250 H 290 V 412 H 252"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
+              <path d="M250 298 H 290" class="svg-flow"></path>
+              <rect
+                x="110"
+                y="392"
+                width="140"
+                height="40"
+                class="svg-node svg-node--data"
+              ></rect>
+              <text x="180" y="417" class="svg-node-text" text-anchor="middle">
+                postgres
+              </text>
 
-              <text x="24" y="452" class="svg-label">Render · region: oregon</text>
-              <text x="24" y="468" class="svg-sub">private network · same workspace</text>
+              <text x="24" y="452" class="svg-label">
+                Render · region: oregon
+              </text>
+              <text x="24" y="468" class="svg-sub">
+                private network · same workspace
+              </text>
 
-              <path d="M250 346 H 322 V 530 H 252" class="svg-flow" marker-end="url(#arrow-afm)" ></path>
-              <rect x="110" y="506" width="140" height="48" class="svg-sandbox" ></rect>
-              <text x="180" y="527" class="svg-node-text" text-anchor="middle">sandbox</text>
-              <text x="180" y="545" class="svg-mono" text-anchor="middle">isolated</text>
+              <path
+                d="M250 346 H 322 V 530 H 252"
+                class="svg-flow"
+                marker-end="url(#arrow-afm)"
+              ></path>
+              <rect
+                x="110"
+                y="506"
+                width="140"
+                height="48"
+                class="svg-sandbox"
+              ></rect>
+              <text x="180" y="527" class="svg-node-text" text-anchor="middle">
+                sandbox
+              </text>
+              <text x="180" y="545" class="svg-mono" text-anchor="middle">
+                isolated
+              </text>
             </svg>
 
-            <figcaption class="agent-flow-caption" data-content="agents.figcaption.1">
-              One request, one region: the web service starts a durable run, subtasks fan out over the private network,
-              and generated code runs in an isolated sandbox.
+            <figcaption
+              class="agent-flow-caption"
+              data-content="agents.figcaption.1"
+            >
+              One request, one region: the web service starts a durable run,
+              subtasks fan out over the private network, and generated code runs
+              in an isolated sandbox.
             </figcaption>
 
             <div class="logs logs--flush">
@@ -493,23 +1314,78 @@
                 <p class="mono">acme-agent · run trace (illustrative)</p>
               </div>
               <p class="sr-only">
-                Illustrative trace for run run_8c21e4 across web, workflow, sandbox and postgres, including one model
-                call that retries once and then succeeds.
+                Illustrative trace for run run_8c21e4 across web, workflow,
+                sandbox and postgres, including one model call that retries once
+                and then succeeds.
               </p>
               <ol class="log-stream mono">
-                <li><time>09:14:02.118</time><span class="svc">web</span><span class="msg">POST /agent/runs 202 · started runAgent · <mark class="rid">run_8c21e4</mark></span></li>
-                <li><time>09:14:02.406</time><span class="svc">workflow</span><span class="msg">runAgent running · fan-out subtasks=3 · <mark class="rid">run_8c21e4</mark></span></li>
-                <li class="retry"><time>09:14:05.871</time><span class="svc">workflow</span><span class="msg">callModel retry 1/3 after backoff … ok · <mark class="rid">run_8c21e4</mark></span></li>
-                <li><time>09:14:09.330</time><span class="svc">sandbox</span><span class="msg">executeCode: pytest -q · exit 0 · <mark class="rid">run_8c21e4</mark></span></li>
-                <li><time>09:14:09.512</time><span class="svc">postgres</span><span class="msg">INSERT agent_results · app=workflow · <mark class="rid">run_8c21e4</mark></span></li>
+                <li>
+                  <time>09:14:02.118</time><span class="svc">web</span
+                  ><span class="msg"
+                    >POST /agent/runs 202 · started runAgent ·
+                    <mark class="rid">run_8c21e4</mark></span
+                  >
+                </li>
+                <li>
+                  <time>09:14:02.406</time><span class="svc">workflow</span
+                  ><span class="msg"
+                    >runAgent running · fan-out subtasks=3 ·
+                    <mark class="rid">run_8c21e4</mark></span
+                  >
+                </li>
+                <li class="retry">
+                  <time>09:14:05.871</time><span class="svc">workflow</span
+                  ><span class="msg"
+                    >callModel retry 1/3 after backoff … ok ·
+                    <mark class="rid">run_8c21e4</mark></span
+                  >
+                </li>
+                <li>
+                  <time>09:14:09.330</time><span class="svc">sandbox</span
+                  ><span class="msg"
+                    >executeCode: pytest -q · exit 0 ·
+                    <mark class="rid">run_8c21e4</mark></span
+                  >
+                </li>
+                <li>
+                  <time>09:14:09.512</time><span class="svc">postgres</span
+                  ><span class="msg"
+                    >INSERT agent_results · app=workflow ·
+                    <mark class="rid">run_8c21e4</mark></span
+                  >
+                </li>
               </ol>
             </div>
           </figure>
 
-          <ul class="result-row reveal" aria-label="Why running agents on one stack matters">
-            <li data-content="agents.li.10"><strong>Shared context</strong><span>The agent run, the code it executes, the API that started it and the Postgres it writes to live in one workspace and region, under one set of credentials and one SDK and CLI.</span></li>
-            <li data-content="agents.li.11"><strong>End-to-end visibility</strong><span>See Workflow run status next to the logs and metrics of the services it calls. A failure between API, agent run and database is traceable in one place, by you or your coding agent via the Render CLI or MCP.</span></li>
-            <li data-content="agents.li.12"><strong>Fewer moving parts</strong><span>No separate queue vendor, worker fleet or third-party code-execution provider to wire up and watch.</span></li>
+          <ul
+            class="result-row reveal"
+            aria-label="Why running agents on one stack matters"
+          >
+            <li data-content="agents.li.10">
+              <strong>Shared context</strong
+              ><span
+                >The agent run, the code it executes, the API that started it
+                and the Postgres it writes to live in one workspace and region,
+                under one set of credentials and one SDK and CLI.</span
+              >
+            </li>
+            <li data-content="agents.li.11">
+              <strong>End-to-end visibility</strong
+              ><span
+                >See Workflow run status next to the logs and metrics of the
+                services it calls. A failure between API, agent run and database
+                is traceable in one place, by you or your coding agent via the
+                Render CLI or MCP.</span
+              >
+            </li>
+            <li data-content="agents.li.12">
+              <strong>Fewer moving parts</strong
+              ><span
+                >No separate queue vendor, worker fleet or third-party
+                code-execution provider to wire up and watch.</span
+              >
+            </li>
           </ul>
         </div>
       </section>
@@ -518,59 +1394,138 @@
       <section class="section" id="examples" aria-labelledby="ex-title">
         <div class="container">
           <header class="section-head reveal">
-            <p class="label" data-content="examples.label.1"><span class="num">05</span> Example apps</p>
-            <h2 id="ex-title" data-content="examples.h2.1">What FDEs actually build, and where it runs best.</h2>
+            <p class="label" data-content="examples.label.1">
+              <span class="num">05</span> Example apps
+            </p>
+            <h2 id="ex-title" data-content="examples.h2.1">
+              What FDEs actually build, and where it runs best.
+            </h2>
             <p class="section-lede" data-content="examples.p.1">
-              Customer engagements tend to land on a few shapes. Each of them needs data next to compute, work that
-              outlives a request, or connections that stay open. Those are the things a full-stack platform is for.
+              Customer engagements tend to land on a few shapes. Each of them
+              needs data next to compute, work that outlives a request, or
+              connections that stay open. Those are the things a full-stack
+              platform is for.
             </p>
           </header>
 
           <div class="cards">
             <article class="card reveal" aria-labelledby="ex1">
-              <h3 id="ex1" data-content="examples.h3.1">Customer knowledge assistant <span class="tag">RAG</span></h3>
-              <p class="pitch" data-content="examples.p.2">Answer questions over a customer's docs, tickets and wikis, with citations.</p>
+              <h3 id="ex1" data-content="examples.h3.1">
+                Customer knowledge assistant <span class="tag">RAG</span>
+              </h3>
+              <p class="pitch" data-content="examples.p.2">
+                Answer questions over a customer's docs, tickets and wikis, with
+                citations.
+              </p>
               <ul class="stack" aria-label="Render components">
-                <li data-content="examples.li.1"><span class="stack-kind">web</span>Chat UI + API</li>
-                <li data-content="examples.li.2"><span class="stack-kind">postgres</span>Render Postgres with pgvector</li>
-                <li data-content="examples.li.3"><span class="stack-kind">workflow</span>Document ingestion + embedding</li>
+                <li data-content="examples.li.1">
+                  <span class="stack-kind">web</span>Chat UI + API
+                </li>
+                <li data-content="examples.li.2">
+                  <span class="stack-kind">postgres</span>Render Postgres with
+                  pgvector
+                </li>
+                <li data-content="examples.li.3">
+                  <span class="stack-kind">workflow</span>Document ingestion +
+                  embedding
+                </li>
               </ul>
-              <p class="why" data-content="examples.p.3"><strong>Why Render, not Vercel:</strong> embeddings and similarity queries stay on the private network next to the data, and ingestion runs as a Workflow without serverless timeouts.</p>
+              <p class="why" data-content="examples.p.3">
+                <strong>Why Render, not Vercel:</strong> embeddings and
+                similarity queries stay on the private network next to the data,
+                and ingestion runs as a Workflow without serverless timeouts.
+              </p>
             </article>
 
             <article class="card reveal" aria-labelledby="ex2">
-              <h3 id="ex2" data-content="examples.h3.2">Long-running research / ops agent</h3>
-              <p class="pitch" data-content="examples.p.4">Multi-step, tool-calling agents that investigate, act and report back.</p>
+              <h3 id="ex2" data-content="examples.h3.2">
+                Long-running research / ops agent
+              </h3>
+              <p class="pitch" data-content="examples.p.4">
+                Multi-step, tool-calling agents that investigate, act and report
+                back.
+              </p>
               <ul class="stack" aria-label="Render components">
-                <li data-content="examples.li.4"><span class="stack-kind">web</span>Starts runs, shows progress</li>
-                <li data-content="examples.li.5"><span class="stack-kind">workflow</span>Agent tasks with retries + backoff</li>
-                <li data-content="examples.li.6"><span class="stack-kind">sandbox</span>Runs tool code in isolation</li>
-                <li data-content="examples.li.7"><span class="stack-kind">postgres</span>Run history and artifacts</li>
+                <li data-content="examples.li.4">
+                  <span class="stack-kind">web</span>Starts runs, shows progress
+                </li>
+                <li data-content="examples.li.5">
+                  <span class="stack-kind">workflow</span>Agent tasks with
+                  retries + backoff
+                </li>
+                <li data-content="examples.li.6">
+                  <span class="stack-kind">sandbox</span>Runs tool code in
+                  isolation
+                </li>
+                <li data-content="examples.li.7">
+                  <span class="stack-kind">postgres</span>Run history and
+                  artifacts
+                </li>
               </ul>
-              <p class="why" data-content="examples.p.5"><strong>Why Render, not Vercel:</strong> Workflow runs can last up to 24 hours, retry automatically and scale to zero, so agent runs outlive serverless function limits, and every step lands in the same logs.</p>
+              <p class="why" data-content="examples.p.5">
+                <strong>Why Render, not Vercel:</strong> Workflow runs can last
+                up to 24 hours, retry automatically and scale to zero, so agent
+                runs outlive serverless function limits, and every step lands in
+                the same logs.
+              </p>
             </article>
 
             <article class="card reveal" aria-labelledby="ex3">
-              <h3 id="ex3" data-content="examples.h3.3">Realtime voice / chat agent</h3>
-              <p class="pitch" data-content="examples.p.6">A support or field agent customers talk to, live, with sub-second turn-taking.</p>
+              <h3 id="ex3" data-content="examples.h3.3">
+                Realtime voice / chat agent
+              </h3>
+              <p class="pitch" data-content="examples.p.6">
+                A support or field agent customers talk to, live, with
+                sub-second turn-taking.
+              </p>
               <ul class="stack" aria-label="Render components">
-                <li data-content="examples.li.8"><span class="stack-kind">web</span>Holds WebSockets to the Realtime API</li>
-                <li data-content="examples.li.9"><span class="stack-kind">key value</span>Session state + presence</li>
-                <li data-content="examples.li.10"><span class="stack-kind">postgres</span>Transcripts and outcomes</li>
+                <li data-content="examples.li.8">
+                  <span class="stack-kind">web</span>Holds WebSockets to the
+                  Realtime API
+                </li>
+                <li data-content="examples.li.9">
+                  <span class="stack-kind">key value</span>Session state +
+                  presence
+                </li>
+                <li data-content="examples.li.10">
+                  <span class="stack-kind">postgres</span>Transcripts and
+                  outcomes
+                </li>
               </ul>
-              <p class="why" data-content="examples.p.7"><strong>Why Render, not Vercel:</strong> long-lived connections need always-on processes, not short-lived edge or serverless functions.</p>
+              <p class="why" data-content="examples.p.7">
+                <strong>Why Render, not Vercel:</strong> long-lived connections
+                need always-on processes, not short-lived edge or serverless
+                functions.
+              </p>
             </article>
 
             <article class="card reveal" aria-labelledby="ex4">
-              <h3 id="ex4" data-content="examples.h3.4">Back-office automation &amp; evals pipeline</h3>
-              <p class="pitch" data-content="examples.p.8">Nightly pulls from customer systems, batch model calls and evals, results on a dashboard.</p>
+              <h3 id="ex4" data-content="examples.h3.4">
+                Back-office automation &amp; evals pipeline
+              </h3>
+              <p class="pitch" data-content="examples.p.8">
+                Nightly pulls from customer systems, batch model calls and
+                evals, results on a dashboard.
+              </p>
               <ul class="stack" aria-label="Render components">
-                <li data-content="examples.li.11"><span class="stack-kind">cron</span>Kicks off the nightly run</li>
-                <li data-content="examples.li.12"><span class="stack-kind">workflow</span>Fan-out batch calls + evals</li>
-                <li data-content="examples.li.13"><span class="stack-kind">postgres</span>Scores and outputs</li>
-                <li data-content="examples.li.14"><span class="stack-kind">web</span>Dashboard on top</li>
+                <li data-content="examples.li.11">
+                  <span class="stack-kind">cron</span>Kicks off the nightly run
+                </li>
+                <li data-content="examples.li.12">
+                  <span class="stack-kind">workflow</span>Fan-out batch calls +
+                  evals
+                </li>
+                <li data-content="examples.li.13">
+                  <span class="stack-kind">postgres</span>Scores and outputs
+                </li>
+                <li data-content="examples.li.14">
+                  <span class="stack-kind">web</span>Dashboard on top
+                </li>
               </ul>
-              <p class="why" data-content="examples.p.9"><strong>Why Render, not Vercel:</strong> scheduling, fan-out, storage and UI all live in one project and one region.</p>
+              <p class="why" data-content="examples.p.9">
+                <strong>Why Render, not Vercel:</strong> scheduling, fan-out,
+                storage and UI all live in one project and one region.
+              </p>
             </article>
           </div>
         </div>
@@ -580,15 +1535,77 @@
       <section class="section" id="gets" aria-labelledby="gets-title">
         <div class="container">
           <header class="section-head reveal">
-            <p class="label" data-content="gets.label.1"><span class="num">06</span> What an FDE gets</p>
-            <h2 id="gets-title" data-content="gets.h2.1">Everything a customer engagement needs, by default.</h2>
+            <p class="label" data-content="gets.label.1">
+              <span class="num">06</span> What an FDE gets
+            </p>
+            <h2 id="gets-title" data-content="gets.h2.1">
+              Everything a customer engagement needs, by default.
+            </h2>
           </header>
           <ul class="checklist">
-            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" ></path></svg><div><strong data-content="gets.strong.1">One <code>render.yaml</code> Blueprint</strong><span data-content="gets.span.1">The whole stack as code, in the region each customer needs. Fork it per customer.</span></div></li>
-            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" ></path></svg><div><strong data-content="gets.strong.2">Private networking by default</strong><span data-content="gets.span.2">Internal hostnames, no public database.</span></div></li>
-            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" ></path></svg><div><strong data-content="gets.strong.3">Unified logs and metrics</strong><span data-content="gets.span.3">Web, API, workers, cron and Postgres in one place.</span></div></li>
-            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" ></path></svg><div><strong data-content="gets.strong.4">Durable agent runs with Workflows</strong><span data-content="gets.span.4">Retries, fan-out and runs of up to 24 hours, scaling to zero.</span></div></li>
-            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" ></path></svg><div><strong data-content="gets.strong.5">Agent-friendly CLI and MCP</strong><span data-content="gets.span.5">Your coding agent can deploy, read logs and check metrics.</span></div></li>
+            <li class="reveal">
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="m5 10.5 3 3 7-7"></path>
+              </svg>
+              <div>
+                <strong data-content="gets.strong.1"
+                  >One <code>render.yaml</code> Blueprint</strong
+                ><span data-content="gets.span.1"
+                  >The whole stack as code, in the region each customer needs.
+                  Fork it per customer.</span
+                >
+              </div>
+            </li>
+            <li class="reveal">
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="m5 10.5 3 3 7-7"></path>
+              </svg>
+              <div>
+                <strong data-content="gets.strong.2"
+                  >Private networking by default</strong
+                ><span data-content="gets.span.2"
+                  >Internal hostnames, no public database.</span
+                >
+              </div>
+            </li>
+            <li class="reveal">
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="m5 10.5 3 3 7-7"></path>
+              </svg>
+              <div>
+                <strong data-content="gets.strong.3"
+                  >Unified logs and metrics</strong
+                ><span data-content="gets.span.3"
+                  >Web, API, workers, cron and Postgres in one place.</span
+                >
+              </div>
+            </li>
+            <li class="reveal">
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="m5 10.5 3 3 7-7"></path>
+              </svg>
+              <div>
+                <strong data-content="gets.strong.4"
+                  >Durable agent runs with Workflows</strong
+                ><span data-content="gets.span.4"
+                  >Retries, fan-out and runs of up to 24 hours, scaling to
+                  zero.</span
+                >
+              </div>
+            </li>
+            <li class="reveal">
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="m5 10.5 3 3 7-7"></path>
+              </svg>
+              <div>
+                <strong data-content="gets.strong.5"
+                  >Agent-friendly CLI and MCP</strong
+                ><span data-content="gets.span.5"
+                  >Your coding agent can deploy, read logs and check
+                  metrics.</span
+                >
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -597,17 +1614,35 @@
       <section class="section" id="get-started" aria-labelledby="gs-title">
         <div class="container gs-grid">
           <div class="reveal">
-            <p class="label" data-content="start.label.1"><span class="num">07</span> Get started</p>
-            <h2 id="gs-title" data-content="start.h2.1">One file. Whole stack.</h2>
+            <p class="label" data-content="start.label.1">
+              <span class="num">07</span> Get started
+            </p>
+            <h2 id="gs-title" data-content="start.h2.1">
+              One full-stack file.
+            </h2>
             <p class="section-lede" data-content="start.p.1">
-              A Blueprint describes the web service and the database it talks to, in one project environment.
-              Render wires the connection string over the private network. Commit it, connect the repo, and every
+              A Blueprint describes the web service and the database it talks
+              to, in one project environment. Render wires the connection string
+              over the private network. Commit it, connect the repo, and every
               customer gets the same shape of stack.
             </p>
             <div class="cta-row">
-              <a class="btn btn-primary" href="https://render.com/tutorials/render-workflows" rel="noopener">
+              <a
+                class="btn btn-primary"
+                href="https://render.com/tutorials/render-workflows"
+                rel="noopener"
+              >
                 Start building
-                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ></path></svg>
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path
+                    d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
               </a>
             </div>
           </div>
@@ -615,10 +1650,21 @@
           <figure class="code reveal">
             <div class="code-head">
               <span class="mono">render.yaml</span>
-              <button type="button" class="copy-btn" data-copy-target="yaml-snippet">Copy</button>
+              <button
+                type="button"
+                class="copy-btn"
+                data-copy-target="yaml-snippet"
+              >
+                Copy
+              </button>
             </div>
-            <figcaption class="sr-only" data-content="start.figcaption.1">Illustrative render.yaml with a web service and Postgres in one project environment</figcaption>
-<pre class="mono"><code id="yaml-snippet"><span class="k">projects</span>:
+            <figcaption class="sr-only" data-content="start.figcaption.1">
+              Illustrative render.yaml with a web service and Postgres in one
+              project environment
+            </figcaption>
+            <pre
+              class="mono"
+            ><code id="yaml-snippet"><span class="k">projects</span>:
   - <span class="k">name</span>: <span class="s">acme-agent</span>
     <span class="k">environments</span>:
       - <span class="k">name</span>: <span class="s">production</span>
