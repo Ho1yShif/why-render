@@ -13,7 +13,8 @@
   --faint: #858585;
   --accent: #a689ff;
   --accent-hover: #bea9ff;
-  --on-accent: #0a0a0a;
+  --accent-press: #8b6cf0;
+  --on-accent: #fff;
   --danger: #ff6b5b;
   --danger-bg: rgba(255, 107, 91, 0.1);
   --radius: 0;
@@ -258,14 +259,14 @@ code,
   width: 16px;
   height: 16px;
 }
-.btn-primary {
+a.btn-primary {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--on-accent);
 }
-.btn-primary:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
+a.btn-primary:is(:hover, :focus-visible, :active) {
+  background: var(--accent-press);
+  border-color: var(--accent-press);
   color: var(--on-accent);
 }
 .btn-secondary {
@@ -280,13 +281,14 @@ code,
 /* ---------- Labels & section scaffolding ---------- */
 .label {
   font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.02em;
-  color: var(--muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--text);
   margin: 0 0 var(--s-5);
 }
 .label .num {
-  color: var(--faint);
+  color: var(--accent);
   margin-right: var(--s-3);
 }
 
