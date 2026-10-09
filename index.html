@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0a0d" />
+    <title>Render for OpenAI FDEs — ship customer apps and agents on one stack</title>
+    <meta
+      name="description"
+      content="An unofficial explainer on why OpenAI forward-deployed engineers benefit from shipping customer apps and agents on Render: private networking, end-to-end observability, and one stack from database to frontend."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Render for FDEs, back to top">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <rect width="32" height="32" rx="7" fill="#15151c" />
+            <path d="M9 22V10h7.5a4 4 0 0 1 0 8H13m3.5 0L22 22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Render <span class="brand-for">for</span> FDEs</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#why">Why</a></li>
+          <li><a href="#private-networking">Private networking</a></li>
+          <li><a href="#observability">Observability</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#get-started">Get started</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- 1. HERO -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="eyebrow">For OpenAI forward-deployed engineers</p>
+          <h1 id="hero-title" >
+            Ship customer apps and agents on <span class="accent">one stack</span>.
+          </h1>
+          <p class="lede">
+            You're dropping into customer environments and shipping in days, not quarters. The database, the API, the
+            agents and the frontend should live together: one region, one private network, one place to read the logs.
+            That's Render.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://render.com" rel="noopener">
+              Explore Render
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </a>
+            <a class="btn btn-ghost" href="#why">Why it matters</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>Stack</dt><dd>Frontend → API → agents → Postgres</dd></div>
+            <div><dt>Network</dt><dd>Private, same region</dd></div>
+            <div><dt>Logs</dt><dd>Every layer, one place</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 2. THE PROBLEM -->
+      <section class="section" id="why" aria-labelledby="why-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">01</span> The problem with stitching providers</p>
+            <h2 id="why-title">Four vendors per prototype is three too many.</h2>
+            <p class="section-lede">
+              A typical "edge-first" build puts the frontend and functions on Vercel or Cloudflare, then bolts on a
+              database vendor, a queue vendor and a logging vendor. Each one is good at its slice. Together they add
+              network hops, dashboards, credentials and blind spots that you have to manage at every customer.
+            </p>
+          </header>
+
+          <div class="compare">
+            <article class="compare-card compare-card--bad reveal" aria-labelledby="compare-stitched">
+              <h3 id="compare-stitched"><span class="tag tag--muted">Stitched</span> Edge platform + vendors</h3>
+              <ul class="vendor-list">
+                <li><span class="vendor-dot"></span><div><strong>Frontend + functions</strong><span>Vercel / Cloudflare</span></div></li>
+                <li><span class="vendor-dot"></span><div><strong>Database</strong><span>Separate database vendor</span></div></li>
+                <li><span class="vendor-dot"></span><div><strong>Queue / background jobs</strong><span>Separate queue vendor</span></div></li>
+                <li><span class="vendor-dot"></span><div><strong>Logs &amp; traces</strong><span>Separate logging vendor</span></div></li>
+              </ul>
+              <p class="compare-foot">4 bills · 4 dashboards · 4 sets of credentials · traffic between them over the public internet</p>
+            </article>
+
+            <div class="compare-vs" aria-hidden="true">vs</div>
+
+            <article class="compare-card compare-card--good reveal" aria-labelledby="compare-render">
+              <h3 id="compare-render"><span class="tag">Render</span> One project</h3>
+              <div class="project-box">
+                <p class="project-box-label mono">project: acme-agent · env: production · region: oregon</p>
+                <ul class="chip-grid">
+                  <li class="chip">Static site</li>
+                  <li class="chip">Web service</li>
+                  <li class="chip">Private service</li>
+                  <li class="chip">Worker</li>
+                  <li class="chip">Cron job</li>
+                  <li class="chip">Workflows</li>
+                  <li class="chip chip--data">Postgres</li>
+                  <li class="chip chip--data">Key Value</li>
+                </ul>
+              </div>
+              <p class="compare-foot">1 Blueprint · 1 dashboard · 1 private network · logs and metrics for every layer</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PRIVATE NETWORKING -->
+      <section class="section section--alt" id="private-networking" aria-labelledby="pn-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">02</span> Private networking</p>
+            <h2 id="pn-title">Keep the hot path off the public internet.</h2>
+          </header>
+
+          <div class="two-col">
+            <div class="prose reveal">
+              <h3 class="kicker kicker--muted">With a functions platform + external database</h3>
+              <p>
+                Your backend function runs on the platform's compute, in whatever region it defaults to unless you
+                pin one, and the database lives with a different provider, in its own network and often its own region.
+                Every query leaves one company's infrastructure, crosses the public internet and enters another's.
+                The database needs a public endpoint to make that work.
+              </p>
+            </div>
+            <div class="prose reveal">
+              <h3 class="kicker">With Render</h3>
+              <p>
+                You pick the region, per customer. Your web service, private services, background workers and
+                Render Postgres / Key Value share a <strong>private network</strong> inside the same region and
+                workspace, and talk over internal hostnames like <code>api:10000</code> or
+                <code>acme-db</code>. Your database never has to be reachable from the internet.
+              </p>
+            </div>
+          </div>
+
+          <div class="diagrams">
+            <figure class="diagram diagram--bad reveal">
+              <svg viewBox="0 0 520 340" role="img" aria-labelledby="d1-title d1-desc">
+                <title id="d1-title">Request path across separate providers</title>
+                <desc id="d1-desc">
+                  A user request reaches an edge function on a hosting provider, then travels over the public internet
+                  through several hops to a database run by a different vendor, then to a separate queue vendor. The
+                  path is long, dashed and crosses three provider boundaries.
+                </desc>
+                <defs>
+                  <marker id="arrow-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 10 5 0 10z" fill="#f2a65a" />
+                  </marker>
+                </defs>
+                <!-- provider boxes -->
+                <rect x="14" y="30" width="178" height="110" rx="10" class="svg-box" />
+                <text x="26" y="52" class="svg-label">Hosting provider</text>
+                <text x="26" y="68" class="svg-sub">region: default</text>
+                <rect x="34" y="84" width="110" height="40" rx="7" class="svg-node" />
+                <text x="89" y="109" class="svg-node-text" text-anchor="middle">fn /api/chat</text>
+
+                <rect x="356" y="30" width="150" height="110" rx="10" class="svg-box" />
+                <text x="368" y="52" class="svg-label">Database vendor</text>
+                <text x="368" y="68" class="svg-sub">public endpoint</text>
+                <rect x="376" y="84" width="110" height="40" rx="7" class="svg-node" />
+                <text x="431" y="109" class="svg-node-text" text-anchor="middle">postgres</text>
+
+                <rect x="186" y="214" width="150" height="110" rx="10" class="svg-box" />
+                <text x="198" y="236" class="svg-label">Queue vendor</text>
+                <text x="198" y="252" class="svg-sub">another network</text>
+                <rect x="206" y="268" width="110" height="40" rx="7" class="svg-node" />
+                <text x="261" y="293" class="svg-node-text" text-anchor="middle">jobs queue</text>
+
+                <!-- internet cloud -->
+                <path transform="translate(270 92) scale(1.4) translate(-270 -92)" d="M222 92c-4-18 14-30 30-24 6-14 30-16 38-2 14-6 30 4 26 20 14 4 14 24-2 26H226c-16-2-18-18-4-20z" class="svg-cloud" />
+                <text x="270" y="100" class="svg-sub" text-anchor="middle">public internet</text>
+
+                <!-- long dashed path -->
+                <path class="svg-path-bad" d="M144 104 C 180 104, 190 150, 214 134 S 250 170, 270 150 S 320 120, 340 132 S 360 110, 374 104" marker-end="url(#arrow-bad)" />
+                <path class="svg-path-bad" d="M431 126 C 431 200, 400 200, 360 230 S 330 280, 318 288" marker-end="url(#arrow-bad)" />
+                <circle cx="214" cy="134" r="4" class="svg-hop" />
+                <circle cx="270" cy="150" r="4" class="svg-hop" />
+                <circle cx="340" cy="132" r="4" class="svg-hop" />
+                <circle cx="372" cy="226" r="4" class="svg-hop" />
+                <text x="40" y="180" class="svg-warn">TLS handshakes, DNS,</text>
+                <text x="40" y="196" class="svg-warn">egress, public exposure</text>
+              </svg>
+              <figcaption><span class="dot dot--warn"></span> Public internet path: long, many hops, three providers.</figcaption>
+            </figure>
+
+            <figure class="diagram diagram--good reveal">
+              <svg viewBox="0 0 520 340" role="img" aria-labelledby="d2-title d2-desc">
+                <title id="d2-title">Request path on a Render private network</title>
+                <desc id="d2-desc">
+                  A single region box labeled Render, Oregon, contains a web service, a private API service, a worker,
+                  Render Postgres and Key Value. Short solid links connect them over the private network using internal
+                  hostnames. Only the web service is exposed to the public internet.
+                </desc>
+                <defs>
+                  <marker id="arrow-good" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 10 5 0 10z" fill="#b69cff" />
+                  </marker>
+                </defs>
+                <text x="260" y="22" class="svg-sub" text-anchor="middle">users (HTTPS)</text>
+                <path d="M260 28 V 62" class="svg-path-good" marker-end="url(#arrow-good)" />
+                <rect x="20" y="66" width="480" height="262" rx="14" class="svg-region" />
+                <text x="38" y="92" class="svg-label svg-label--accent">Render · region: oregon</text>
+                <text x="38" y="108" class="svg-sub">private network · same workspace</text>
+
+                <rect x="200" y="122" width="120" height="42" rx="8" class="svg-node svg-node--accent" />
+                <text x="260" y="148" class="svg-node-text" text-anchor="middle">web</text>
+
+                <rect x="60" y="196" width="120" height="42" rx="8" class="svg-node" />
+                <text x="120" y="216" class="svg-node-text" text-anchor="middle">api</text>
+                <text x="120" y="230" class="svg-mono" text-anchor="middle">pserv</text>
+
+                <rect x="340" y="196" width="120" height="42" rx="8" class="svg-node" />
+                <text x="400" y="222" class="svg-node-text" text-anchor="middle">worker</text>
+
+                <rect x="60" y="270" width="120" height="42" rx="8" class="svg-node svg-node--data" />
+                <text x="120" y="296" class="svg-node-text" text-anchor="middle">Postgres</text>
+
+                <rect x="340" y="270" width="120" height="42" rx="8" class="svg-node svg-node--data" />
+                <text x="400" y="296" class="svg-node-text" text-anchor="middle">Key Value</text>
+
+                <path d="M228 164 L 150 196" class="svg-path-good" marker-end="url(#arrow-good)" />
+                <path d="M292 164 L 370 196" class="svg-path-good" marker-end="url(#arrow-good)" />
+                <path d="M120 238 V 268" class="svg-path-good" marker-end="url(#arrow-good)" />
+                <path d="M400 238 V 268" class="svg-path-good" marker-end="url(#arrow-good)" />
+                <path d="M340 220 L 182 284" class="svg-path-good svg-path-faint" marker-end="url(#arrow-good)" />
+                <text x="176" y="180" class="svg-mono" text-anchor="end">api:10000</text>
+                <text x="132" y="258" class="svg-mono">acme-db</text>
+                <text x="412" y="258" class="svg-mono">acme-kv</text>
+              </svg>
+              <figcaption><span class="dot dot--ok"></span> Render private network: short, contained in one region.</figcaption>
+            </figure>
+          </div>
+
+          <ul class="result-row reveal" aria-label="Results of private networking">
+            <li><strong>Lower latency</strong><span>Services and data sit in the same region.</span></li>
+            <li><strong>Fewer hops</strong><span>No round trip across providers for every query.</span></li>
+            <li><strong>No public database</strong><span>Postgres and Key Value can stay internal-only.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. OBSERVABILITY -->
+      <section class="section" id="observability" aria-labelledby="obs-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">03</span> Observability</p>
+            <h2 id="obs-title">When a request dies in flight, see exactly where.</h2>
+          </header>
+
+          <div class="obs-grid">
+            <div class="prose reveal">
+              <h3 class="kicker kicker--muted">Across providers</h3>
+              <p>
+                That same cross-provider request can fail somewhere between the function and the database, and no one
+                notices. Each vendor sees only its own slice: the function logs a timeout, the database logs nothing
+                unusual, the queue never got the message. The failure lives in the gap between dashboards.
+              </p>
+              <h3 class="kicker">On Render</h3>
+              <p>
+                Logs and metrics cover every layer: web services, APIs, workers, cron jobs and Postgres, all in one
+                place. When something breaks <em>between</em> layers, you and your coding agent follow one request
+                end to end.
+              </p>
+              <p>
+                The <strong>Render CLI</strong> and <strong>Render MCP server</strong> let an agent pull logs and
+                metrics directly, so Codex or your agent of choice can triage a customer incident with you without
+                copying and pasting from four tabs.
+              </p>
+              <pre class="cli mono" aria-label="Illustrative CLI command"><code><span class="prompt">$</span> render logs -r srv-api,srv-worker,dpg-acme-db \
+    -o text | grep req_7f3a9c</code></pre>
+            </div>
+
+            <figure class="logs reveal">
+              <div class="logs-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <p class="mono">acme-agent · production · logs</p>
+              </div>
+              <figcaption class="sr-only">
+                Mock unified log stream following request req_7f3a9c across the web, api, worker and postgres
+                services. The request ends in a Postgres statement timeout that the api surfaces as a 504 error.
+              </figcaption>
+              <ol class="log-stream mono">
+                <li><time>14:02:11.204</time><span class="svc svc--web">web</span><span class="msg">GET /chat 200 · <mark class="rid">req_7f3a9c</mark> · user=ops@acme</span></li>
+                <li><time>14:02:11.219</time><span class="svc svc--api">api</span><span class="msg">POST /v1/answer · <mark class="rid">req_7f3a9c</mark> · model=gpt</span></li>
+                <li class="dim"><time>14:02:11.231</time><span class="svc svc--worker">worker</span><span class="msg">heartbeat ok · queue depth=3</span></li>
+                <li><time>14:02:11.236</time><span class="svc svc--api">api</span><span class="msg">retrieve top_k=8 from acme-db · <mark class="rid">req_7f3a9c</mark></span></li>
+                <li><time>14:02:11.240</time><span class="svc svc--pg">postgres</span><span class="msg">LOG: statement start · app=api · <mark class="rid">req_7f3a9c</mark></span></li>
+                <li><time>14:02:11.302</time><span class="svc svc--worker">worker</span><span class="msg">job embed_docs started · <mark class="rid">req_7f3a9c</mark> · 412 chunks</span></li>
+                <li><time>14:02:11.305</time><span class="svc svc--pg">postgres</span><span class="msg">LOG: lock wait on table doc_chunks · pid 4412</span></li>
+                <li class="dim"><time>14:02:12.010</time><span class="svc svc--web">web</span><span class="msg">GET /health 200</span></li>
+                <li class="warn"><time>14:02:16.240</time><span class="svc svc--pg">postgres</span><span class="msg">WARN: lock held 5000ms by worker · reindex doc_chunks</span></li>
+                <li class="error" aria-label="Error line"><time>14:02:21.241</time><span class="svc svc--pg">postgres</span><span class="msg">ERROR: canceling statement due to statement timeout · <mark class="rid">req_7f3a9c</mark></span></li>
+                <li class="error"><time>14:02:21.244</time><span class="svc svc--api">api</span><span class="msg">504 upstream acme-db timed out · <mark class="rid">req_7f3a9c</mark> → root cause: worker reindex lock</span></li>
+              </ol>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. EXAMPLES -->
+      <section class="section section--alt" id="examples" aria-labelledby="ex-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">04</span> Example apps</p>
+            <h2 id="ex-title">What FDEs actually build, and where it runs best.</h2>
+            <p class="section-lede">
+              Customer engagements tend to land on a few shapes. Each of them needs data next to compute, work that
+              outlives a request, or connections that stay open. Those are the things a full-stack platform is for.
+            </p>
+          </header>
+
+          <div class="cards">
+            <article class="card reveal" aria-labelledby="ex1">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z M8 9h6M8 13h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="18" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m20.4 20.4 1.6 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <h3 id="ex1">Customer knowledge assistant <span class="pill">RAG</span></h3>
+              <p class="pitch">Answer questions over a customer's docs, tickets and wikis, with citations.</p>
+              <ul class="stack" aria-label="Render components">
+                <li><span class="stack-kind">web</span>Chat UI + API</li>
+                <li><span class="stack-kind stack-kind--data">postgres</span>Render Postgres with pgvector</li>
+                <li><span class="stack-kind stack-kind--flow">workflow</span>Document ingestion + embedding</li>
+              </ul>
+              <p class="why"><strong>Why Render, not Vercel:</strong> embeddings and similarity queries stay on the private network next to the data, and ingestion runs as a Workflow without serverless timeouts.</p>
+            </article>
+
+            <article class="card reveal" aria-labelledby="ex2">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <h3 id="ex2">Long-running research / ops agent</h3>
+              <p class="pitch">Multi-step, tool-calling agents that investigate, act and report back.</p>
+              <ul class="stack" aria-label="Render components">
+                <li><span class="stack-kind">web</span>Starts runs, shows progress</li>
+                <li><span class="stack-kind stack-kind--flow">workflow</span>Agent tasks with retries + backoff</li>
+                <li><span class="stack-kind stack-kind--data">postgres</span>Run history and artifacts</li>
+              </ul>
+              <p class="why"><strong>Why Render, not Vercel:</strong> Workflow runs can last up to 24 hours, retry automatically and scale to zero, so agent runs outlive serverless function limits, and every step lands in the same logs.</p>
+            </article>
+
+            <article class="card reveal" aria-labelledby="ex3">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <h3 id="ex3">Realtime voice / chat agent</h3>
+              <p class="pitch">A support or field agent customers talk to, live, with sub-second turn-taking.</p>
+              <ul class="stack" aria-label="Render components">
+                <li><span class="stack-kind">web</span>Holds WebSockets to the Realtime API</li>
+                <li><span class="stack-kind stack-kind--data">key value</span>Session state + presence</li>
+                <li><span class="stack-kind stack-kind--data">postgres</span>Transcripts and outcomes</li>
+              </ul>
+              <p class="why"><strong>Why Render, not Vercel:</strong> long-lived connections need always-on processes, not short-lived edge or serverless functions.</p>
+            </article>
+
+            <article class="card reveal" aria-labelledby="ex4">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 3v3M16 3v3M8 13.5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 id="ex4">Back-office automation &amp; evals pipeline</h3>
+              <p class="pitch">Nightly pulls from customer systems, batch model calls and evals, results on a dashboard.</p>
+              <ul class="stack" aria-label="Render components">
+                <li><span class="stack-kind stack-kind--cron">cron</span>Kicks off the nightly run</li>
+                <li><span class="stack-kind stack-kind--flow">workflow</span>Fan-out batch calls + evals</li>
+                <li><span class="stack-kind stack-kind--data">postgres</span>Scores and outputs</li>
+                <li><span class="stack-kind">web</span>Dashboard on top</li>
+              </ul>
+              <p class="why"><strong>Why Render, not Vercel:</strong> scheduling, fan-out, storage and UI all live in one project and one region.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. WHAT AN FDE GETS -->
+      <section class="section" id="gets" aria-labelledby="gets-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">05</span> What an FDE gets</p>
+            <h2 id="gets-title">Everything a customer engagement needs, by default.</h2>
+          </header>
+          <ul class="checklist">
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>One <code>render.yaml</code> Blueprint</strong><span>The whole stack as code. Fork it per customer.</span></div></li>
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>Pick a region per customer</strong><span>Put compute and data where the customer needs them.</span></div></li>
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>Private networking by default</strong><span>Internal hostnames, no public database.</span></div></li>
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>Unified logs and metrics</strong><span>Web, API, workers, cron and Postgres in one place.</span></div></li>
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>Managed Postgres and Key Value</strong><span>pgvector for retrieval, Key Value for sessions and queues.</span></div></li>
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>PR preview environments</strong><span>Show the customer every change before it ships.</span></div></li>
+            <li class="reveal"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 10.5 3 3 7-7" /></svg><div><strong>Agent-friendly CLI and MCP</strong><span>Your coding agent can deploy, read logs and check metrics.</span></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 7. GET STARTED -->
+      <section class="section section--alt" id="get-started" aria-labelledby="gs-title">
+        <div class="container gs-grid">
+          <div class="reveal">
+            <p class="eyebrow"><span class="num">06</span> Get started</p>
+            <h2 id="gs-title">One file. Whole stack.</h2>
+            <p class="section-lede">
+              A Blueprint describes the web service and the database it talks to, in one project environment.
+              Render wires the connection string over the private network. Commit it, connect the repo, and every
+              customer gets the same shape of stack.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://render.com/docs" rel="noopener">
+                Read the Render docs
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <figure class="code reveal">
+            <div class="code-head">
+              <span class="mono">render.yaml</span>
+              <button type="button" class="copy-btn" data-copy-target="yaml-snippet">Copy</button>
+            </div>
+            <figcaption class="sr-only">Illustrative render.yaml with a web service and Postgres in one project environment</figcaption>
+<pre class="mono"><code id="yaml-snippet"><span class="k">projects</span>:
+  - <span class="k">name</span>: <span class="s">acme-agent</span>
+    <span class="k">environments</span>:
+      - <span class="k">name</span>: <span class="s">production</span>
+        <span class="k">services</span>:
+          - <span class="k">type</span>: <span class="s">web</span>
+            <span class="k">name</span>: <span class="s">acme-api</span>
+            <span class="k">runtime</span>: <span class="s">node</span>
+            <span class="k">region</span>: <span class="s">oregon</span>
+            <span class="k">buildCommand</span>: <span class="s">npm ci &amp;&amp; npm run build</span>
+            <span class="k">startCommand</span>: <span class="s">npm start</span>
+            <span class="k">envVars</span>:
+              - <span class="k">key</span>: <span class="s">DATABASE_URL</span>
+                <span class="k">fromDatabase</span>:
+                  <span class="k">name</span>: <span class="s">acme-db</span>
+                  <span class="k">property</span>: <span class="s">connectionString</span>
+              - <span class="k">key</span>: <span class="s">OPENAI_API_KEY</span>
+                <span class="k">sync</span>: <span class="b">false</span>
+        <span class="k">databases</span>:
+          - <span class="k">name</span>: <span class="s">acme-db</span>
+            <span class="k">region</span>: <span class="s">oregon</span>
+            <span class="k">ipAllowList</span>: [] <span class="c"># private network only</span></code></pre>
+            <p class="copy-status sr-only" role="status" aria-live="polite"></p>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          <strong>Unofficial explainer.</strong> Not affiliated with or endorsed by OpenAI, Render, Vercel or
+          Cloudflare. Comparisons describe architectural tradeoffs of multi-provider setups; check each provider's
+          current docs for specifics. Product names belong to their owners.
+        </p>
+        <p><a href="#top">Back to top ↑</a></p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
