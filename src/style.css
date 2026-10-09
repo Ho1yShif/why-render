@@ -358,34 +358,6 @@ a.btn-primary:is(:hover, :focus-visible, :active) {
   line-height: 1.5;
   color: var(--muted);
 }
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s-6);
-  margin: var(--s-9) 0 0;
-}
-.hero-stats div {
-  border-top: 1px solid var(--border);
-  padding-top: var(--s-4);
-}
-.hero-stats dt {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--faint);
-  margin-bottom: var(--s-1);
-}
-.hero-stats dd {
-  margin: 0;
-  font-size: var(--fs-sm);
-}
-@media (max-width: 640px) {
-  .hero-stats {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--s-4);
-    margin-top: var(--s-8);
-  }
-}
-
 /* ---------- Tags ---------- */
 .tag {
   display: inline-block;
@@ -933,8 +905,8 @@ a.btn-primary:is(:hover, :focus-visible, :active) {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  column-gap: var(--s-6);
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 720px;
 }
 .checklist li {
   display: flex;
