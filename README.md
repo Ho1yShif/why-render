@@ -1,5 +1,7 @@
 # Render for OpenAI FDEs
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ho1yShif/why-render)
+
 An unofficial, single-page explainer that makes the case for OpenAI forward-deployed engineers using Render to ship customer apps and agents. It covers private networking, end-to-end observability and example app architectures.
 
 Built with Vite, vanilla TypeScript and hand-written CSS. It loads no remote assets and no trackers.
@@ -16,4 +18,4 @@ npm run build && npm start
 
 `public/health` is served at `/health` (returns `ok`) for preview health checks.
 
-Deploy: `render.yaml` defines a Render static site (`dist/`) inside the `fde-render-explainer` project's `production` environment.
+Deploy: click the button above, or create a Blueprint from this repo. `render.yaml` defines a Render static site (`dist/`) inside the `fde-render-explainer` project's `production` environment.

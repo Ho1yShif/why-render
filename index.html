@@ -37,6 +37,7 @@
       <!-- 1. HERO -->
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-inner">
+          <div class="hero-copy">
           <p class="label">For OpenAI forward-deployed engineers</p>
           <h1 id="hero-title">
             Ship customer apps and agents on one stack.
@@ -52,6 +53,48 @@
               <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
             <a class="btn btn-secondary" href="#why">Why it matters</a>
+          </div>
+          </div>
+          <div class="hero-trace" aria-hidden="true">
+            <svg viewBox="0 0 460 480" focusable="false" xml:space="preserve">
+              <defs>
+                <filter id="hero-trace-glow" x="-200%" y="-200%" width="500%" height="500%">
+                  <feGaussianBlur stdDeviation="5" />
+                </filter>
+              </defs>
+              <rect x="22" y="76" width="416" height="388" class="svg-region hero-trace-region" />
+              <text x="40" y="101" class="svg-label svg-label--accent hero-trace-label">render · region: oregon</text>
+              <text x="40" y="120" class="svg-sub hero-trace-sub">private network</text>
+              <path class="svg-path-good hero-trace-link" d="M330 43 V163 L160 215 L300 267 L160 319" />
+              <g class="hero-trace-node hero-trace-node--user">
+                <rect x="283" y="24" width="94" height="38" class="svg-node" />
+                <text x="330" y="48" class="svg-node-text" text-anchor="middle">user</text>
+              </g>
+              <g class="hero-trace-node hero-trace-node--web">
+                <rect x="283" y="144" width="94" height="38" class="svg-node svg-node--accent" />
+                <text x="330" y="168" class="svg-node-text" text-anchor="middle">web</text>
+              </g>
+              <g class="hero-trace-node hero-trace-node--api">
+                <rect x="113" y="196" width="94" height="38" class="svg-node" />
+                <text x="160" y="220" class="svg-node-text" text-anchor="middle">api</text>
+              </g>
+              <g class="hero-trace-node hero-trace-node--agent">
+                <rect x="253" y="248" width="94" height="38" class="svg-node" />
+                <text x="300" y="272" class="svg-node-text" text-anchor="middle">agent</text>
+              </g>
+              <g class="hero-trace-node hero-trace-node--pg">
+                <rect x="113" y="300" width="94" height="38" class="svg-node" />
+                <text x="160" y="324" class="svg-node-text" text-anchor="middle">postgres</text>
+              </g>
+              <circle cx="330" cy="43" r="10" class="hero-trace-packet-glow" filter="url(#hero-trace-glow)" />
+              <circle cx="330" cy="43" r="4.5" class="hero-trace-packet" />
+              <rect x="40" y="370" width="380" height="76" class="hero-trace-log" />
+              <text x="54" y="385" class="svg-sub hero-trace-log-title">live logs</text>
+              <text x="54" y="400" class="hero-trace-log-line hero-trace-log-line--1">web    GET /chat      200   3ms</text>
+              <text x="54" y="414" class="hero-trace-log-line hero-trace-log-line--2">api    POST /run      200  12ms</text>
+              <text x="54" y="428" class="hero-trace-log-line hero-trace-log-line--3">agent  run ok             840ms</text>
+              <text x="54" y="442" class="hero-trace-log-line hero-trace-log-line--4">pg     SELECT 1 row         2ms</text>
+            </svg>
           </div>
         </div>
       </section>
@@ -563,8 +606,8 @@
               customer gets the same shape of stack.
             </p>
             <div class="cta-row">
-              <a class="btn btn-primary" href="https://render.com/docs" rel="noopener">
-                Read the Render docs
+              <a class="btn btn-primary" href="https://render.com/tutorials/render-workflows" rel="noopener">
+                Start building
                 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
               </a>
             </div>
